@@ -1,0 +1,12 @@
+name = "TIS Main";
+picture = "TISaddon.paa";
+actionName = "GitHub";
+action = "https://github.com/TIS-Team/TIS-Main";
+description = "Main mod for TIS Arma 3 Unit";
+logo = "TISEXP2.paa";
+logoOver = "TISEXP2.paa";
+tooltip = "TIS-Main";
+tooltipOwned = "TIS-Main Owned";
+overview = "Main mod for TIS Arma 3 Unit";
+author = "TIS - Tactical Intervention Syndicate";
+overviewPicture = "";
