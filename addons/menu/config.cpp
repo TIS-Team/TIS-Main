@@ -17,22 +17,9 @@ class CfgPatches
         VERSION_CONFIG;
 	};
 };
-class CAWorld;
 class RscStandardDisplay;
-class RscVignette;
-class RscControlsGroupNoScrollbars;
-class RscFrame;
-class RscText;
 class RscPicture;
-class RscTitle;
-class RscButtonMenu;
-class RscHTML;
-class RscControlsGroupNoHScrollbars;
-class RscListBox;
-class RscPictureKeepAspect;
 class RscButton;
-class RscButtonImages;
-class RscShortcutButton;
 class RscDisplayConfigure
 {
 	enableDisplay=1;
