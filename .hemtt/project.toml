@@ -15,7 +15,11 @@ include = [
     "mod.cpp",      # These files are copied to the build directory by default
     "meta.cpp",     # They do not need to be added to your list
     "LICENSE",
-    "keys/**"
+    "keys/**",
+    "TISEXP2.paa",
+    "T1.paa",
+    "TISaddon.paa",
+    "TISLOGO.paa"
 ]
 exclude = [
     ".idea/**"
