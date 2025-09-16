@@ -6,7 +6,7 @@ class CfgPatches
 	{
 		units[]={};
 		weapons[]={};
-		author="Quallex";
+		author="Quallex, Nerdi, TIS";
 		requiredAddons[]=
 		{
 			"A3_Weapons_F"
@@ -21,19 +21,20 @@ class CfgVehicles
 	{
 		author="Quallex";
 		scope=2;
-		picture="TIS_Invisible_Backpack\data\icon\TIS_LOGO.paa";
+		picture=QPATHTOF(data\icon\TIS_LOGO.paa);
 		displayName="[TIS] Invisible Backpack";
-		model="\TIS_Invisible_Backpack\model\hide.p3d";
+		model=QPATHTOF(model\hide.p3d);
 		maximumLoad=2000;
 		mass=1;
 	};
-		class TFAR_Invisible_Radio: B_Kitbag_rgr
+	
+	class TFAR_Invisible_Radio: B_Kitbag_rgr
 	{
 		author="Quallex";
 		scope=2;
 		displayName="TFAR Invisible Radio";
-		picture="TFAR_Invisible_Radio\data\icon\TIS_LOGO.paa";
-		model="\TFAR_Invisible_Radio\Hide.p3d";
+		picture=QPATHTOF(data\icon\TIS_LOGO.paa);
+		model=QPATHTOF(model\Hide.p3d);
 		maximumLoad=0;
 		mass=0;
 		tf_dialogUpdate="call TFAR_fnc_updateLRDialogToChannel;";
@@ -43,13 +44,14 @@ class CfgVehicles
 		tf_dialog="rt1523g_radio_dialog";
 		tf_subtype="digital_lr";
 	};
+	
 	class TFAR_Invisible_Radio_Zeus: B_Kitbag_rgr
 	{
 		author="Quallex";
 		scope=2;
 		displayName="TFAR Invisible Radio [TYLKO ZEUS]";
-		picture="TFAR_Invisible_Radio\data\icon\TIS_LOGO.paa";
-		model="\TFAR_Invisible_Radio\Hide.p3d";
+		picture= QPATHTOF(data\icon\TIS_LOGO.paa);
+		model=QPATHTOF(model\Hide.p3d);
 		maximumLoad=5000;
 		mass=0;
 		tf_dialogUpdate="call TFAR_fnc_updateLRDialogToChannel;";
