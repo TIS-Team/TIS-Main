@@ -1,5 +1,5 @@
-#define COMPONENT tis_loading_screen
-#include "\z\tis\addons\tis_main\script_mod.hpp"
+#define COMPONENT loading_screen
+#include "\z\tis_main\addons\main\script_mod.hpp"
 
 // #define DEBUG_ENABLED_TIS_LOADING_SCREEN
 // #define DISABLE_COMPILE_CACHE
@@ -14,4 +14,4 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_TIS_LOADING_SCREEN
 #endif
 
-#include "\z\tis\addons\tis_main\script_macros.hpp"
+#include "\z\tis_main\addons\main\script_macros.hpp"

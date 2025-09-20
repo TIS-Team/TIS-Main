@@ -2,7 +2,7 @@
 
 class CfgPatches
 {
-	class TIS_Menu
+	class ADDON
 	{
         name = COMPONENT_NAME;
 		authors[]= {"Quallex", "Nerdi", "TIS"};
@@ -14,6 +14,7 @@ class CfgPatches
         requiredVersion = REQUIRED_VERSION;
 		units[]={};
 		weapons[]={};
+        authorUrl = "https://github.com/TIS-Team";
         VERSION_CONFIG;
 	};
 };
@@ -109,9 +110,4 @@ class RscDisplayMain: RscStandardDisplay
 			text= QPATHTOF(data\TIS_MENU.jpg);
 		};
 	};
-};
-class CfgMods
-{
-	author="Quallex";
-	timepacked="1678024438";
 };

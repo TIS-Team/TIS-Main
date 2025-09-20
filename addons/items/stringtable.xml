@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="TIS-Main">
+    <Package name="items">
+        <Key ID="str_tis_main_items_drinking">
+            <English>Drinking %1</English>
+            <Polish>Picie %1</Polish>
+        </Key>
+        <Key ID="str_tis_main_items_tisowianka_description">
+            <English>Powerful minteral water! Sweet earth's juice!</English>
+            <Polish>Potężna woda mineralna! Słodki sok ziemi!</Polish>
+        </Key>
+        <Key ID="str_tis_main_items_tisowianka_displayname">
+            <English>Tisowianka</English>
+            <Polish>Tisowianka</Polish>
+        </Key>
+    </Package>
+</Project>

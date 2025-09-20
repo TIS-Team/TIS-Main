@@ -3,13 +3,14 @@
 
 class CfgPatches
 {
-	class TIS_LoadingScreen
+	class ADDON
 	{
         name = COMPONENT_NAME;
 		units[]={};
 		weapons[]={};
         requiredVersion = REQUIRED_VERSION;
 		requiredAddons[]={"cba_main"};
+        authorUrl = "https://github.com/TIS-Team";
         VERSION_CONFIG;
 	};
 };

@@ -1,5 +1,5 @@
-#define COMPONENT tis_main
-#include "\z\tis\addons\tis_main\script_mod.hpp"
+#define COMPONENT main
+#include "\z\tis_main\addons\main\script_mod.hpp"
 
 // #define DEBUG_ENABLED_TIS_MAIN
 // #define DISABLE_COMPILE_CACHE
@@ -14,4 +14,4 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_TIS_MAIN
 #endif
 
-#include "\z\tis\addons\tis_main\script_macros.hpp"
+#include "\z\tis_main\addons\main\script_macros.hpp"
