@@ -37,6 +37,8 @@
 
 #define LINKFUNC(x) {_this call FUNC(x)}
 
+#define TIS_MAIN_SETTINGS_CAT ELSTRING(main,settingsTisMainCategory)
+
 
 // ACE3 macros
 

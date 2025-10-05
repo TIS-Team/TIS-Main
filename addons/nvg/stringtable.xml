@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="TIS-Main">
+    <Package name="nvg">
+        <Key ID="str_tis_main_nvg_checknvgbattery">
+            <English>Check NVG battery</English>
+            <Polish>Sprawdź baterię NVG</Polish>
+        </Key>
+        <Key ID="str_tis_main_nvg_nvgbatterypercentage">
+            <English>NVG Battery: %1%%</English>
+            <Polish>Bateria NVG: %1%%</Polish>
+        </Key>
+        <Key ID="str_tis_main_nvg_powerconsumptionspeed">
+            <English>NVG battery consumption speed</English>
+            <Polish>Prędkość poboru baterii NVG</Polish>
+        </Key>
+        <Key ID="str_tis_main_nvg_powerconsumptionspeedtooltip">
+            <English>Battery power = 10000 points. Battery is drained every second by this value.</English>
+            <Polish>Moc baterii = 10000 punktow. Bateria spada co sekundę o wskazaną wartość.</Polish>
+        </Key>
+        <Key ID="str_tis_main_nvg_replacenvgbattery">
+            <English>Replace NVG battery</English>
+            <Polish>Wymień baterię NVG</Polish>
+        </Key>
+        <Key ID="str_tis_main_nvg_setting_batterypowerconsumption">
+            <English>NVG battery consumption</English>
+            <Polish>Pobór baterii NVG</Polish>
+        </Key>
+        <Key ID="str_tis_main_nvg_subcategory_nvg">
+            <English>Nightvision</English>
+            <Polish>Noktowizja</Polish>
+        </Key>
+    </Package>
+</Project>

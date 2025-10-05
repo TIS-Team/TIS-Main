@@ -1,0 +1,9 @@
+PREP(initPlayer);
+PREP(hasNvg);
+PREP(checkNvgBatteryLife);
+PREP(replaceNvgBattery);
+PREP(hasBattery);
+PREP(startNvgBatteryDrain);
+PREP(stopNvgBatteryDrain);
+PREP(restartNvgBatteryDrain);
+PREP(toggleNvgBatteryDrain);
