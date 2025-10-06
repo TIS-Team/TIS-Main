@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="TIS-Main">
     <Package name="main">
+        <Key ID="str_tis_main_main_settingstismaincategory">
+            <English>TIS Main</English>
+            <Polish>TIS Main</Polish>
+        </Key>
         <Key ID="str_tis_main_main_tisteam">
             <English>TIS-Team</English>
             <Polish>TIS-Team</Polish>
