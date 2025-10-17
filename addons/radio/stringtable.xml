@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="TIS-Main">
+    <Package name="radio">
+        <Key ID="str_tis_main_radio_tis_anprc_152_broken_radio_description">
+            <English>It needs to be repaired to function properly</English>
+            <Polish>Musi zostać naprawione aby dało się go używać</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tis_anprc_152_broken_radio_displayname">
+            <English>Broken AN/PRC-152</English>
+            <Polish>Zepsute AN/PRC-152</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tis_anprc_152_discharged_radio_description">
+            <English>It needs to be charged to function properly</English>
+            <Polish>Musi zostać naładowane aby dało się go używać</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tis_anprc_152_discharged_radio_displayname">
+            <English>Discharged AN/PRC-152</English>
+            <Polish>Rozładowane AN/PRC-152</Polish>
+        </Key>
+    </Package>
+</Project>
