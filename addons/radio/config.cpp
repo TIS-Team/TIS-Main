@@ -18,7 +18,8 @@ class CfgPatches
 		{
 			"A3_Weapons_F",
 			"cba_main",
-			"tis_main_main"
+			"tis_main_main",
+			"tfar_core"
 		};
         requiredVersion = REQUIRED_VERSION;
         authorUrl = "https://github.com/TIS-Team";

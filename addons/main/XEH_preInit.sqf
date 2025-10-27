@@ -6,5 +6,6 @@ ADDON = false;
 // #include "cba_settings.inc.sqf"
 
 GVAR(isAceInteractionMenuLoaded) = isClass (configFile >> "CfgPatches" >> "ace_interact_menu");
+GVAR(isWbkZombiesLoaded) = isClass (configFile >> "CfgPatches" >> "WBK_ZombieCreatures");
 
 ADDON = true;

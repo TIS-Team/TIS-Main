@@ -1,4 +1,4 @@
-PREP(initPlayer);
+PREP(initPostPlayer);
 PREP(hasNvg);
 PREP(checkNvgBatteryLife);
 PREP(replaceNvgBattery);
