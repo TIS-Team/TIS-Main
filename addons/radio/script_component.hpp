@@ -15,3 +15,9 @@
 #endif
 
 #include "\z\tis_main\addons\main\script_macros.hpp"
+
+// TFAR macros
+#define TFAR_PREFIX tfar
+
+#define TFAR_PATHTOF(component,path) \z\tfar\addons\component\path
+#define TFAR_QPATHTOF(component,path) QUOTE(TFAR_PATHTOF(component,path))

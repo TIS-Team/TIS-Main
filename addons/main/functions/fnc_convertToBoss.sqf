@@ -9,6 +9,10 @@ TRACE_4("Convert to boss",_unit,_name,_hpNumber,_showHealthBar);
 private _healthVariable = "tis_unit_custom_health";
 private _healthVariableName = "tis_unit_custom_health_var_name";
 
+if (GVAR(isIMSLoaded)) then {
+	_unit setVariable ['IMS_IsUnitInvicibleScripted', 1, true];
+};
+
 // Check if WBK_Zombie
 if (GVAR(isWbkZombiesLoaded) && { getText (configOf _unit >> "faction") isEqualTo "WBK_AI_ZHAMBIES"}) then {
 	_healthVariable = "WBK_SynthHP";
