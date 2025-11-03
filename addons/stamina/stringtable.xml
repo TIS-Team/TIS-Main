@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="TIS-Main">
+    <Package name="stamina">
+        <Key ID="str_tis_main_stamina_setting_removestaminaonrespawn">
+            <English>Remove stamina on respawn</English>
+            <Polish>Usuń kondycję przy odrodzeniu</Polish>
+        </Key>
+        <Key ID="str_tis_main_stamina_subcategory_stamina">
+            <English>Stamina</English>
+            <Polish>Kondycja</Polish>
+        </Key>
+    </Package>
+</Project>

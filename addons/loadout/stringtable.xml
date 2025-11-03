@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="TIS-Main">
+    <Package name="loadout">
+        <Key ID="str_tis_main_loadout_setting_saveandreplaceaceloaduout">
+            <English>Save and replace ACE loadout on respawn</English>
+            <Polish>Zapisz i podmień loadout ACE przy odrodzeniu</Polish>
+        </Key>
+        <Key ID="str_tis_main_loadout_setting_saveandreplacevanillaloaduout">
+            <English>Save and replace Vanilla loadout on respawn</English>
+            <Polish>Zapisz i podmień loadout Vanilla przy odrodzeniu</Polish>
+        </Key>
+        <Key ID="str_tis_main_loadout_subcategory_loadout">
+            <English>Loadout</English>
+            <Polish>Wyposażenie</Polish>
+        </Key>
+    </Package>
+</Project>
