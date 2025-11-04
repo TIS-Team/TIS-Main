@@ -7,14 +7,14 @@ if (!_isRespawn) then {
     // BIS/Vanilla Arsenal
     [missionNamespace, "arsenalClosed", {   
         if (GVAR(SaveAndReplaceVanillaLoadout)) then {
-            player setVariable [QGVAR(TisSavedLoadout), getUnitLoadout player];
+            player setVariable [QGVAR(SavedLoadout), getUnitLoadout player];
         };
     }] call BIS_fnc_addScriptedEventHandler;
     
 
     ["ace_arsenal_displayClosed", {
         if (GVAR(SaveAndReplaceAceLoadout)) then {
-            player setVariable [QGVAR(TisSavedLoadout), getUnitLoadout player];
+            player setVariable [QGVAR(SavedLoadout), getUnitLoadout player];
         };
     }] call CBA_fnc_addEventHandler;
 };
