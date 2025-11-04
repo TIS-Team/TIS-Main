@@ -23,5 +23,8 @@ if (_unit isNotEqualTo player) exitWith {};
 if (!local _unit) exitWith {};
 
 if (GVAR(SaveAndReplaceVanillaLoadout) || {GVAR(SaveAndReplaceAceLoadout)}) then {
-    player setUnitLoadout (player getVariable [QGVAR(TisSavedLoadout),[]]);
+    private _loadout = player getVariable [QGVAR(SavedLoadout), []];
+    if (count _loadout > 0) then {
+        player setUnitLoadout _loadout;
+    };
 };
