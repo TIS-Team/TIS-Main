@@ -31,7 +31,7 @@ class GVAR(RscConvertToBoss): RscDisplayAttributes {
                     x = 0;
                     y = 0;
                     w = QUOTE(W_PART(26));
-                    h = QUOTE(H_PART(3.3));
+                    h = QUOTE(H_PART(5.5));
                     class controls {
                         class NameLabel: RscText {
                             idc = -1;
@@ -83,6 +83,41 @@ class GVAR(RscConvertToBoss): RscDisplayAttributes {
                             rows = 1;
                             columns = 2;
                             strings[] = {ECSTRING(common,No), ECSTRING(common,Yes)};
+                        };
+                        class ShouldMakeMeleeInvincibleLabel: RscText {
+                            idc = -1;
+                            text = ECSTRING(main,ShouldMakeMeleeInvincibleLabel);
+                            x = 0;
+                            y = QUOTE(H_PART(3.3));
+                            w = QUOTE(W_PART(10));
+                            h = QUOTE(H_PART(1));
+                            colorBackground[] = {0, 0, 0, 0.5};
+                        };
+                        class ShouldMakeMeleeInvincibleToggle: ctrlToolbox {
+                            idc = ZEUS_CONVERTTOBOSS_DIALOG_SHOULD_MAKE_MELEE_INVINCIBLE_TOGGLE_ID;
+                            x = QUOTE(W_PART(10.1));
+                            y = QUOTE(H_PART(3.3));
+                            w = QUOTE(W_PART(15.9));
+                            h = QUOTE(H_PART(1));
+                            rows = 1;
+                            columns = 2;
+                            strings[] = {ECSTRING(common,No), ECSTRING(common,Yes)};
+                        };
+                        class CustomHealthVarNameLabel: RscText {
+                            idc = -1;
+                            text = ECSTRING(main,CustomHealthVarNameLabel);
+                            x = 0;
+                            y = QUOTE(H_PART(4.4));
+                            w = QUOTE(W_PART(10));
+                            h = QUOTE(H_PART(1));
+                            colorBackground[] = {0, 0, 0, 0.5};
+                        };
+                        class CustomHealthVarNameEdit: RscEdit {
+                            idc = ZEUS_CONVERTTOBOSS_DIALOG_CUSTOM_HEALTH_VAR_NAME_EDIT_ID;
+                            x = QUOTE(W_PART(10.1));
+                            y = QUOTE(H_PART(4.4));
+                            w = QUOTE(W_PART(13.9));
+                            h = QUOTE(H_PART(1));
                         };
                     };
                 };

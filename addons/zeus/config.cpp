@@ -7,8 +7,7 @@ class CfgPatches
         name = COMPONENT_NAME;
 		authors[]= { "TIS" };
 		units[]={
-			QGVAR(moduleConvertToBoss),
-			QGVAR(moduleRemoveVulnerableObject)
+			QGVAR(moduleConvertToBoss)
 		};
 		weapons[]={};
         requiredVersion = REQUIRED_VERSION;

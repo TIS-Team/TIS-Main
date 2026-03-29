@@ -32,12 +32,16 @@ switch (false) do {
 private _nameEditField = _display displayCtrl ZEUS_CONVERTTOBOSS_DIALOG_NAME_EDIT_ID;
 private _hpEditField = _display displayCtrl ZEUS_CONVERTTOBOSS_DIALOG_HP_EDIT_ID;
 private _showHealthBarToggle = _display displayCtrl ZEUS_CONVERTTOBOSS_DIALOG_SHOW_HEALTHBAR_TOGGLE_ID;
+private _shouldMakeMeleeInvincibleToggle = _display displayCtrl ZEUS_CONVERTTOBOSS_DIALOG_SHOULD_MAKE_MELEE_INVINCIBLE_TOGGLE_ID;
+private _customHealthVarName = _display displayCtrl ZEUS_CONVERTTOBOSS_DIALOG_CUSTOM_HEALTH_VAR_NAME_EDIT_ID;
 
 ////////////////////////////////////////////////////////////
 // Default values
 _nameEditField ctrlSetText "";
 _hpEditField ctrlSetText "";
 _showHealthBarToggle lbSetCurSel 1;
+_shouldMakeMeleeInvincibleToggle lbSetCurSel 0;
+_customHealthVarName ctrlSetText "";
 
 /////////////////////////////////////////////////////////////
 // Cancel and Confirmation
@@ -60,13 +64,15 @@ private _fnc_onConfirm = {
 	private _name = ctrlText (_display displayCtrl ZEUS_CONVERTTOBOSS_DIALOG_NAME_EDIT_ID);
 	private _hpText = ctrlText (_display displayCtrl ZEUS_CONVERTTOBOSS_DIALOG_HP_EDIT_ID);
 	private _showHealthBar = (lbCurSel (_display displayCtrl ZEUS_CONVERTTOBOSS_DIALOG_SHOW_HEALTHBAR_TOGGLE_ID)) > 0;
+    private _shouldMakeMeleeInvincibleToggle = (lbCurSel (_display displayCtrl ZEUS_CONVERTTOBOSS_DIALOG_SHOULD_MAKE_MELEE_INVINCIBLE_TOGGLE_ID)) > 0;
+    private _customHealthVarName = ctrlText (_display displayCtrl ZEUS_CONVERTTOBOSS_DIALOG_CUSTOM_HEALTH_VAR_NAME_EDIT_ID);
 
 	private _hpNumber = _hpText call BIS_fnc_parseNumber;
 	if (_hpNumber == -1) exitWith {
 		[LLSTRING(HealthPointsMustBeNumeric)] call FUNC(showZeusFeedbackMessage);
 	};
 
-    [attachedTo _logic, _name, _hpNumber, _showHealthBar] call FUNC(moduleConvertToBoss);
+    [attachedTo _logic, _name, _hpNumber, _showHealthBar, _shouldMakeMeleeInvincibleToggle, _customHealthVarName] call FUNC(moduleConvertToBoss);
     deleteVehicle _logic;
 };
 
