@@ -20,7 +20,7 @@ Stamina:
 - [x] Option to remove stamina on respawn
 
 Nvg:
-- [x] Option to drain its power on usage + chargeable with ACE UAV_battery
+- [x] Option to drain its power on usage + chargeable with configurable items e.g. ACE_UAVBattery
 
 Radio:
 - [x] Broken radio items
@@ -30,3 +30,16 @@ Food:
 
 Zeus:
 - [x] Module - Convert unit to boss
+
+## Dependencies
+
+Required:
+- CBA_A3
+- Task Force Arrowhead Radio
+
+Optional:
+- ACE (but highly recommended)
+
+## Links
+
+- [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3572852932)
