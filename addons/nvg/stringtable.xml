@@ -21,9 +21,25 @@
             <English>Replace NVG battery</English>
             <Polish>Wymień baterię NVG</Polish>
         </Key>
+        <Key ID="str_tis_main_nvg_setting_batteryitems">
+            <English>Battery items</English>
+            <Polish>Przedmioty baterii</Polish>
+        </Key>
+        <Key ID="str_tis_main_nvg_setting_batteryitemstooltip">
+            <English>Class names in array format, e.g ['ACE_BatteryItem', 'Toolkit']</English>
+            <Polish>Nazwy klas w formacie arraya, np. ['ACE_BatteryItem', 'Toolkit']</Polish>
+        </Key>
         <Key ID="str_tis_main_nvg_setting_batterypowerconsumption">
             <English>NVG battery consumption</English>
             <Polish>Pobór baterii NVG</Polish>
+        </Key>
+        <Key ID="str_tis_main_nvg_setting_shouldremovebatteryitemonreplacement">
+            <English>Should remove battery item on battery replacement?</English>
+            <Polish>Usunąć przedmiot baterii po zmianie baterii?</Polish>
+        </Key>
+        <Key ID="str_tis_main_nvg_setting_shouldremovebatteryitemonreplacementtooltip">
+            <English>Will remove first found item from the list</English>
+            <Polish>Usunie pierwszy znaleziony przedmiot z listy</Polish>
         </Key>
         <Key ID="str_tis_main_nvg_subcategory_nvg">
             <English>Nightvision</English>

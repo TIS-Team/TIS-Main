@@ -11,8 +11,7 @@ class CfgPatches
 		requiredAddons[]=
 		{
 			"cba_main",
-			"tis_main_main",
-			"ace_logistics_uavbattery"
+			"tis_main_main"
 		};
         requiredVersion = REQUIRED_VERSION;
         authorUrl = "https://github.com/TIS-Team";
@@ -21,4 +20,3 @@ class CfgPatches
 };
 
 #include "CfgEventHandlers.hpp"
-#include "AceSelfActions.hpp"

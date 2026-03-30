@@ -5,19 +5,16 @@ class CfgPatches
 	class ADDON
 	{
         name = COMPONENT_NAME;
-		units[]={
-			"TIS_Tisowianka_Item"
-		};
-		weapons[]={
-			"TIS_Tisowianka"
-		};
+		units[]={};
+		weapons[]={};
 		author="TIS";
 		requiredAddons[]=
 		{
-			"A3_Weapons_F",
 			"cba_main",
 			"tis_main_main",
-			"ace_field_rations"
+			"tis_main_nvg",
+			"ace_interact_menu",
+			"ace_logistics_uavbattery"
 		};
 		skipWhenMissingDependencies = 1;
         requiredVersion = REQUIRED_VERSION;
@@ -26,5 +23,4 @@ class CfgPatches
 	};
 };
 
-#include "CfgVehicles.hpp"
-#include "CfgWeapons.hpp"
+#include "AceSelfActions.hpp"
