@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="TIS-Main">
     <Package name="loadout">
-        <Key ID="str_tis_main_loadout_setting_saveandreplaceaceloaduout">
-            <English>Save and replace ACE loadout on respawn</English>
-            <Polish>Zapisz i podmień loadout ACE przy odrodzeniu</Polish>
+        <Key ID="str_tis_main_loadout_respawnloadoutreset">
+            <English>Respawn loadout reset!</English>
+            <Polish>Loadout po odrodzeniu zresetowany!</Polish>
         </Key>
-        <Key ID="str_tis_main_loadout_setting_saveandreplacevanillaloaduout">
-            <English>Save and replace Vanilla loadout on respawn</English>
-            <Polish>Zapisz i podmień loadout Vanilla przy odrodzeniu</Polish>
+        <Key ID="str_tis_main_loadout_respawnloadoutsaved">
+            <English>Respawn loadout saved!</English>
+            <Polish>Zapisano nowy loadout po odrodzeniu!</Polish>
+        </Key>
+        <Key ID="str_tis_main_loadout_setting_addsaveandresetloadoutactiontoarsenal">
+            <English>Add save and reset loadout actions to arsenal?</English>
+            <Polish>Dodawać akcje zapisania i resetu loadout do obiektu arsenału?</Polish>
+        </Key>
+        <Key ID="str_tis_main_loadout_setting_restoreaceloadoutonrespawn">
+            <English>Restore ACE loadout on respawn</English>
+            <Polish>Przywróć loadout ACE przy odrodzeniu</Polish>
+        </Key>
+        <Key ID="str_tis_main_loadout_setting_restorevanillaloadoutonrespawn">
+            <English>Restore BIS/Vanilla loadout on respawn</English>
+            <Polish>Przywróć loadout BIS/Vanilla przy odrodzeniu</Polish>
+        </Key>
+        <Key ID="str_tis_main_loadout_setting_saveaceloadoutonarsenalclose">
+            <English>Save ACE loadout on arsenal close</English>
+            <Polish>Zapisz loadout ACE przy zamknięciu arsenału</Polish>
+        </Key>
+        <Key ID="str_tis_main_loadout_setting_savevanillaloadoutonarsenalclose">
+            <English>Save BIS/Vanilla loadout on arsenal close</English>
+            <Polish>Zapisz loadout BIS/Vanilla przy zamknięciu arsenału</Polish>
         </Key>
         <Key ID="str_tis_main_loadout_subcategory_loadout">
             <English>Loadout</English>
