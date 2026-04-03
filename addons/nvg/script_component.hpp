@@ -16,4 +16,4 @@
 
 #include "\z\tis_main\addons\main\script_macros.hpp"
 
-#define NVG_BATTERY_MAX_LIFEPOINTS 10000
+#define NvgBatteryMaxLifepoints 10000

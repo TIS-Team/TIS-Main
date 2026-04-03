@@ -2,6 +2,7 @@
 PREP(emptyFunction);
 
 PREP(moduleConvertToBoss);
+PREP(moduleRefillNvgBattery);
 
 PREP(ui_convertToBoss);
 

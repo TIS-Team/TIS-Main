@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="TIS-Main">
+    <Package name="zeus">
+        <Key ID="str_tis_main_zeus_bosscreated">
+            <English>Boss created!</English>
+            <Polish>Boss utworzony!</Polish>
+        </Key>
+        <Key ID="str_tis_main_zeus_nvgbatteryrefilled">
+            <English>NVG battery refilled!</English>
+            <Polish>Bateria NVG odnowiona!</Polish>
+        </Key>
+    </Package>
+</Project>

@@ -7,3 +7,4 @@ PREP(startNvgBatteryDrain);
 PREP(stopNvgBatteryDrain);
 PREP(restartNvgBatteryDrain);
 PREP(toggleNvgBatteryDrain);
+PREP(doRefillBattery);

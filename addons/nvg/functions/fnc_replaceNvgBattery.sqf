@@ -18,4 +18,5 @@ private _foundBatteryItem = "";
 if (_removeBattery) then {
     [_player, _foundBatteryItem] call CBA_fnc_removeItem;
 };
-_player setVariable [QGVAR(nvgBatteryLifePoints), NVG_BATTERY_MAX_LIFEPOINTS];
+
+[_player, NvgBatteryMaxLifepoints] call FUNC(doRefillBattery);

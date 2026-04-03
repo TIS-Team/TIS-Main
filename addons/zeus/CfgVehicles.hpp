@@ -22,4 +22,11 @@ class CfgVehicles {
         curatorInfoType = QGVAR(RscConvertToBoss);
         icon = "a3\ui_f\data\gui\rsc\rscdisplayarcademap\icon_config_ca.paa";
     };
+
+    class GVAR(moduleRefillNvgBattery): GVAR(baseModule) {
+        curatorCanAttach = 1;
+        displayName = ECSTRING(main,Module_RefillNvgBattery_DisplayName);
+        function = QFUNC(moduleRefillNvgBattery);
+        icon = "a3\ui_f\data\gui\rsc\rscdisplayarcademap\icon_config_ca.paa";
+    };
 };
