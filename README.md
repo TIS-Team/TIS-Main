@@ -15,6 +15,7 @@ Misc:
 Arsenal:
 - [x] Option to save loadout on leaving BIS Arsenal and reapply it on respawn
 - [x] Option to save loadout on laving ACE Arsenal and reapply it on respawn
+- [x] Option to add "save" and "reset" respawn loadout actions to ACE Arsenal Box 
 
 Stamina:
 - [x] Option to remove stamina on respawn
@@ -30,6 +31,7 @@ Food:
 
 Zeus:
 - [x] Module - Convert unit to boss
+- [x] Module - Refill NVG battery
 
 ## Dependencies
 
