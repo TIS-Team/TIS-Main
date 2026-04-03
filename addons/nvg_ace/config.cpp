@@ -13,8 +13,7 @@ class CfgPatches
 			"cba_main",
 			"tis_main_main",
 			"tis_main_nvg",
-			"ace_interact_menu",
-			"ace_logistics_uavbattery"
+			"ace_interact_menu"
 		};
 		skipWhenMissingDependencies = 1;
         requiredVersion = REQUIRED_VERSION;

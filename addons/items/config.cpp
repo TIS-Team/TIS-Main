@@ -6,9 +6,7 @@ class CfgPatches
 	{
         name = COMPONENT_NAME;
 		units[]={
-			"TIS_Invisible_Backpack",
-			"TFAR_Invisible_Radio",
-			"TFAR_Invisible_Radio_Zeus"
+			"TIS_Invisible_Backpack"
 		};
 		author="TIS";
 		requiredAddons[]=
