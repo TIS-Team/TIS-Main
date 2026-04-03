@@ -40,7 +40,7 @@ class CfgVehicles
 	class TFAR_rt1523g: TFAR_Bag_Base {};
 	class TFAR_rt1523g_sage: TFAR_rt1523g {};
 	class TFAR_rt1523g_black: TFAR_rt1523g_sage {};
-	class TFAR_rt1523g_black_broken: TFAR_rt1523g_black
+	class TIS_TFAR_rt1523g_black_broken: TFAR_rt1523g_black
 	{
 		author="TIS";
 		displayName="Broken RT-1523G (ASIP) Black";
@@ -48,7 +48,7 @@ class CfgVehicles
 	};
 
 	class B_Kitbag_rgr;
-	class TFAR_Invisible_Radio: B_Kitbag_rgr
+	class TIS_TFAR_Invisible_Radio: B_Kitbag_rgr
 	{
 		author="Quallex";
 		scope=2;
@@ -65,7 +65,7 @@ class CfgVehicles
 		tf_subtype="digital_lr";
 	};
 	
-	class TFAR_Invisible_Radio_Zeus: B_Kitbag_rgr
+	class TIS_TFAR_Invisible_Radio_Zeus: B_Kitbag_rgr
 	{
 		author="Quallex";
 		scope=2;

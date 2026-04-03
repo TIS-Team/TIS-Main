@@ -5,6 +5,14 @@
             <English>Boss created!</English>
             <Polish>Boss utworzony!</Polish>
         </Key>
+        <Key ID="str_tis_main_zeus_mustselectobject">
+            <English>Must select an object!</English>
+            <Polish>Musisz wybrać obiekt!</Polish>
+        </Key>
+        <Key ID="str_tis_main_zeus_mustselectplayer">
+            <English>Must select a player!</English>
+            <Polish>Musisz wybrać gracza!</Polish>
+        </Key>
         <Key ID="str_tis_main_zeus_nvgbatteryrefilled">
             <English>NVG battery refilled!</English>
             <Polish>Bateria NVG odnowiona!</Polish>

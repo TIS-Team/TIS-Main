@@ -1,7 +1,7 @@
 #define COMPONENT zeus
 #include "\z\tis_main\addons\main\script_mod.hpp"
 
-// #define DEBUG_ENABLED_TIS_ZEUS
+#define DEBUG_ENABLED_TIS_ZEUS
 // #define DISABLE_COMPILE_CACHE
 // #define CBA_DEBUG_SYNCHRONOUS
 // #define ENABLE_PERFORMANCE_COUNTERS

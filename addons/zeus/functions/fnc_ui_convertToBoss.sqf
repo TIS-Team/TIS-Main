@@ -25,7 +25,7 @@ private _fnc_errorAndClose = {
 
 switch (false) do {
     case !(isNull _unit): {
-        [LELSTRING(main,MustSelectObject)] call _fnc_errorAndClose;
+        [LLSTRING(MustSelectObject)] call _fnc_errorAndClose;
     };
 };
 

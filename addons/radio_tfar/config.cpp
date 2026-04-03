@@ -8,8 +8,8 @@ class CfgPatches
 		units[]={
 			"TIS_Anprc_152_Broken_Radio_Item",
 			"TIS_Anprc_152_Discharged_Radio_Item",
-			"TFAR_Invisible_Radio",
-			"TFAR_Invisible_Radio_Zeus"
+			"TIS_TFAR_Invisible_Radio",
+			"TIS_TFAR_Invisible_Radio_Zeus"
 		};
 		weapons[]={
 			"TIS_Anprc_152_Broken_Radio",

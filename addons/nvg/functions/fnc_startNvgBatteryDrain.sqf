@@ -4,22 +4,30 @@ params [];
 
 GVAR(NvgBatteryDrainHandle) = [
     {
-        _isBlackout = uiNamespace getVariable [QGVAR(NvgIsBlackout), false];
+        _isBlackScreenVisible = uiNamespace getVariable [QGVAR(BlackScreenVisible), false];
         _currentBattery = player getVariable [QGVAR(nvgBatteryLifePoints), 0];
+        
+        _isZeusInterface = not (isNull (findDisplay 312));
+        if (_isZeusInterface) exitWith {
+            if (_isBlackScreenVisible) exitWith {
+                [QGVAR(NvgBatteryDrainedBlackScreenId), true, 3] call BIS_fnc_blackIn;
+                uiNamespace setVariable [QGVAR(BlackScreenVisible), false]
+            };;
+        };
 
         // Drain power
         if (_currentBattery > 0) then {
-            if (_isBlackout) then {
-                [QGVAR(NvgBatteryDrainedBlackout), true, 3] call BIS_fnc_blackIn;
-                uiNamespace setVariable [QGVAR(NvgIsBlackout), false];
+            if (_isBlackScreenVisible) then {
+                [QGVAR(NvgBatteryDrainedBlackScreenId), true, 3] call BIS_fnc_blackIn;
+                uiNamespace setVariable [QGVAR(BlackScreenVisible), false];
             };
 
             _newBattery = _currentBattery - GVAR(PowerConsumptionSpeed);
             player setVariable [QGVAR(nvgBatteryLifePoints), _newBattery];
         } else {
-            if (!_isBlackout) then {
-                [QGVAR(NvgBatteryDrainedBlackout), true, 3] call BIS_fnc_blackOut;
-                uiNamespace setVariable [QGVAR(NvgIsBlackout), true];
+            if (!_isBlackScreenVisible) then {
+                [QGVAR(NvgBatteryDrainedBlackScreenId), true, 3] call BIS_fnc_blackOut;
+                uiNamespace setVariable [QGVAR(BlackScreenVisible), true];
             };
         };
     },

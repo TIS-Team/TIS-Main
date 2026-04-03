@@ -4,4 +4,4 @@ params ["_player"];
 
 _batteryLifePoints = _player getVariable [QGVAR(nvgBatteryLifePoints), 0];
 
-hint format [LLSTRING(NvgBatteryPercentage), _batteryLifePoints / NvgBatteryMaxLifepoints * 100];
+hint format [LLSTRING(NvgBatteryPercentage), _batteryLifePoints / EGVAR(nvg,BatteryPowerCapacity) * 100];

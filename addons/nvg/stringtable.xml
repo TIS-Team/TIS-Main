@@ -14,8 +14,8 @@
             <Polish>Prędkość poboru baterii NVG</Polish>
         </Key>
         <Key ID="str_tis_main_nvg_powerconsumptionspeedtooltip">
-            <English>Battery power = 10000 points. Battery is drained every second by this value.</English>
-            <Polish>Moc baterii = 10000 punktow. Bateria spada co sekundę o wskazaną wartość.</Polish>
+            <English>Battery is drained every second by this value.</English>
+            <Polish>Bateria spada co sekundę o wskazaną wartość.</Polish>
         </Key>
         <Key ID="str_tis_main_nvg_replacenvgbattery">
             <English>Replace NVG battery</English>
@@ -28,6 +28,10 @@
         <Key ID="str_tis_main_nvg_setting_batteryitemstooltip">
             <English>Class names in array format, e.g ['ACE_BatteryItem', 'Toolkit']</English>
             <Polish>Nazwy klas w formacie arraya, np. ['ACE_BatteryItem', 'Toolkit']</Polish>
+        </Key>
+        <Key ID="str_tis_main_nvg_setting_batterypowercapacity">
+            <English>NVG battery capacity</English>
+            <Polish>Pojemność baterii NVG</Polish>
         </Key>
         <Key ID="str_tis_main_nvg_setting_batterypowerconsumption">
             <English>NVG battery consumption</English>

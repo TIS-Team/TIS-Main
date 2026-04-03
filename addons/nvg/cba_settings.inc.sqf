@@ -10,11 +10,22 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(BatteryPowerCapacity),
+    "SLIDER",
+    LLSTRING(SETTING_BatteryPowerCapacity),
+    [TIS_MAIN_SETTINGS_CAT, LSTRING(SubCategory_Nvg)],
+    [1, 10000, 10000, 0],
+    true,
+    {},
+    false
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(PowerConsumptionSpeed),
     "SLIDER",
     [LLSTRING(PowerConsumptionSpeed), LLSTRING(PowerConsumptionSpeedTooltip)],
     [TIS_MAIN_SETTINGS_CAT, LSTRING(SubCategory_Nvg)],
-    [1, 100, 7, 0],
+    [1, 1000, 7, 0],
     true,
     {},
     false

@@ -7,7 +7,8 @@ class CfgPatches
         name = COMPONENT_NAME;
 		authors[]= { "TIS" };
 		units[]={
-			QGVAR(moduleConvertToBoss)
+			QGVAR(moduleConvertToBoss),
+			QGVAR(moduleRefillNvgBattery)
 		};
 		weapons[]={};
         requiredVersion = REQUIRED_VERSION;

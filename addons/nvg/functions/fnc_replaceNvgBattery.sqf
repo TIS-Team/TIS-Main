@@ -19,4 +19,4 @@ if (_removeBattery) then {
     [_player, _foundBatteryItem] call CBA_fnc_removeItem;
 };
 
-[_player, NvgBatteryMaxLifepoints] call FUNC(doRefillBattery);
+[_player, EGVAR(nvg,BatteryPowerCapacity)] call FUNC(doRefillBattery);

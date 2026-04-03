@@ -1,16 +1,37 @@
 #include "script_component.hpp"
 
-params ["_logic"];
+/*
+ * Author: Aquerr (Nerdi)
+ * Refills unit's NVG battery.
+ *
+ * Arguments:
+ * 0: The module logic <OBJECT>
+ * 1: Synchronized units <ARRAY>
+ * 2: Activated <BOOL>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [LOGIC, [thomas, stefan], true] call tis_main_zeus_fnc_moduleRefillNvgBattery;
+ *
+ */
 
-TRACE_1("logic",_logic);
+params [["_logic", objNull, [objNull]]];
 
-private _unit = attachedTo _logic;
-TRACE_1("unit",_unit);
+if (!local _logic) exitWith {};
 
 (GETMVAR(bis_fnc_curatorObjectPlaced_mouseOver,[""])) params ["_mouseOverType", "_mouseOverUnit"];
 if (_mouseOverType != "OBJECT") then {
-    [LELSTRING(main,MustSelectObject)] call FUNC(showZeusFeedbackMessage);
+    [LLSTRING(MustSelectPlayer)] call FUNC(showZeusFeedbackMessage);
 } else {
-    [_unit, NvgBatteryMaxLifepoints] remoteExec [QEFUNC(nvg,doRefillBattery), _unit];
-    [LLSTRING(NvgBatteryRefilled)] call FUNC(showZeusFeedbackMessage);
+    _unit = _mouseOverUnit;
+    if (isPlayer _unit) then {
+        [_unit, EGVAR(nvg,BatteryPowerCapacity)] remoteExec [QEFUNC(nvg,doRefillBattery), _unit];
+        [LLSTRING(NvgBatteryRefilled)] call FUNC(showZeusFeedbackMessage);   
+    } else {
+        [LLSTRING(MustSelectPlayer)] call FUNC(showZeusFeedbackMessage);
+    };
 };
+
+deleteVehicle _logic;

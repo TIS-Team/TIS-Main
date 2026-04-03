@@ -15,5 +15,3 @@
 #endif
 
 #include "\z\tis_main\addons\main\script_macros.hpp"
-
-#define NvgBatteryMaxLifepoints 10000
