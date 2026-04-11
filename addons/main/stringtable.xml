@@ -13,6 +13,9 @@
             <English>Custom health var name</English>
             <Polish>Własna nazwa zmiennej dla zdrowia</Polish>
         </Key>
+        <Key ID="str_tis_main_main_debuglabel">
+            <English>Debug</English>
+        </Key>
         <Key ID="str_tis_main_main_hplabel">
             <English>HP</English>
             <Polish>HP</Polish>
@@ -29,6 +32,14 @@
             <English>Name</English>
             <Polish>Nazwa</Polish>
         </Key>
+        <Key ID="str_tis_main_main_radiuslabel">
+            <English>Radius</English>
+            <Polish>Promień</Polish>
+        </Key>
+        <Key ID="str_tis_main_main_radiustooltip">
+            <English>Radius is calculated in meters</English>
+            <Polish>Promień jest wyliczany w metrach</Polish>
+        </Key>
         <Key ID="str_tis_main_main_settingstismaincategory">
             <English>TIS Main</English>
             <Polish>TIS Main</Polish>
@@ -40,6 +51,10 @@
         <Key ID="str_tis_main_main_showbossbarlabel">
             <English>Show boss bar</English>
             <Polish>Pokaż boss bar</Polish>
+        </Key>
+        <Key ID="str_tis_main_main_strengthlabel">
+            <English>Strength</English>
+            <Polish>Moc</Polish>
         </Key>
         <Key ID="str_tis_main_main_tisteam">
             <English>TIS-Team</English>

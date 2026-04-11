@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="TIS-Main">
     <Package name="radio_tfar">
+        <Key ID="str_tis_main_radio_tfar_module_tfarradiojammers_description">
+            <English>Converts synced objects to TFAR radio jammers</English>
+            <Polish>Konwertuje zsynchronizowane obiekty jako zagłuszacze radia TFAR</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_module_tfarradiojammers_displayname">
+            <English>TFAR radio jammers</English>
+            <Polish>TFAR radio zagłuszczacze</Polish>
+        </Key>
         <Key ID="str_tis_main_radio_tfar_tis_anprc_152_broken_radio_description">
             <English>It needs to be repaired to function properly</English>
             <Polish>Musi zostać naprawione aby dało się go używać</Polish>

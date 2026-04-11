@@ -81,4 +81,6 @@ class CfgVehicles
 		tf_dialog="rt1523g_radio_dialog";
 		tf_subtype="digital_lr"; 
 	};
+
+	#include "EdenModules.hpp"
 };

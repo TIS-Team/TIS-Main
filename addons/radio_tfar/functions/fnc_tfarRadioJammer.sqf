@@ -42,6 +42,7 @@ if (not (isNil QGVAR(JammersHandle)) && {GVAR(JammersHandle) isNotEqualTo ""}) t
 	GVAR(JammersHandle) = "";
 };
 
+// Only one handler can be active at given time
 GVAR(JammersHandle) = [
     {
         params ["_args", "_handleId"];
@@ -89,7 +90,7 @@ GVAR(JammersHandle) = [
             _sendInterference = 1;
 
             if (_dist < _rad) then {
-                _interference = _strength - (_distPercent * _strength) + 1; // Calculat the recieving interference, which has to be above 1 to have any effect.
+                _interference = _strength - (_distPercent * _strength) + 1; // Calculate the recieving interference, which has to be above 1 to have any effect.
                 _sendInterference = 1/_interference; //Calculate the sending interference, which needs to be below 1 to have any effect.
             };
             // Set the TF receiving and sending distance multipliers
