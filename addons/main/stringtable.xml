@@ -9,12 +9,28 @@
             <English>Yes</English>
             <Polish>Tak</Polish>
         </Key>
+        <Key ID="str_tis_main_main_actionname">
+            <English>Action name</English>
+            <Polish>Nazwa akcji</Polish>
+        </Key>
+        <Key ID="str_tis_main_main_considercallerdistancelabel">
+            <English>Consider downloader distance</English>
+            <Polish>Bierz pod uwagę dystans od obiektu</Polish>
+        </Key>
         <Key ID="str_tis_main_main_customhealthvarnamelabel">
             <English>Custom health var name</English>
             <Polish>Własna nazwa zmiennej dla zdrowia</Polish>
         </Key>
         <Key ID="str_tis_main_main_debuglabel">
             <English>Debug</English>
+        </Key>
+        <Key ID="str_tis_main_main_downloadspeedlabel">
+            <English>Download speed</English>
+            <Polish>Prędkość pobierania</Polish>
+        </Key>
+        <Key ID="str_tis_main_main_downloadspeedtooltip">
+            <English>Data is downloaded with this speed</English>
+            <Polish>Dane są pobierane z tą prędkością</Polish>
         </Key>
         <Key ID="str_tis_main_main_hplabel">
             <English>HP</English>
@@ -24,6 +40,14 @@
             <English>BOSS: Convert to boss</English>
             <Polish>BOSS: Zamień na bossa</Polish>
         </Key>
+        <Key ID="str_tis_main_main_module_datadownload_description">
+            <English>Adds data download mechanism to synced objects.</English>
+            <Polish>Pozwala dodać do zsynchronizowanych obiektów mechanizm pobierania danych.</Polish>
+        </Key>
+        <Key ID="str_tis_main_main_module_datadownload_displayname">
+            <English>Data download location</English>
+            <Polish>Miejsce pobierania danych</Polish>
+        </Key>
         <Key ID="str_tis_main_main_module_refillnvgbattery_displayname">
             <English>NVG: Refill NVG Battery</English>
             <Polish>NVG: Odnów baterię NVG</Polish>
@@ -32,6 +56,38 @@
             <English>Name</English>
             <Polish>Nazwa</Polish>
         </Key>
+        <Key ID="str_tis_main_main_oncompletecodelabel">
+            <English>On Complete Code</English>
+            <Polish>Kod podczas zakończenia</Polish>
+        </Key>
+        <Key ID="str_tis_main_main_oncompletecodetooltip">
+            <English>Passed args: [_device]</English>
+            <Polish>Przekazane argumenty: [_device]</Polish>
+        </Key>
+        <Key ID="str_tis_main_main_onconnectionlostcodelabel">
+            <English>On Connection Lost Code</English>
+            <Polish>Kod podczas zerwania połączenia</Polish>
+        </Key>
+        <Key ID="str_tis_main_main_onconnectionlostcodetooltip">
+            <English>Passed args: [_device]</English>
+            <Polish>Przekazane argumenty: [_device]</Polish>
+        </Key>
+        <Key ID="str_tis_main_main_onprogresscodelabel">
+            <English>On Progress Code</English>
+            <Polish>Kod podczas postępu</Polish>
+        </Key>
+        <Key ID="str_tis_main_main_onprogresscodetooltip">
+            <English>Passed args: [_device, _progress]</English>
+            <Polish>Przekazane argumenty: [_device, _progress]</Polish>
+        </Key>
+        <Key ID="str_tis_main_main_onstartcodelabel">
+            <English>On Start Code</English>
+            <Polish>Kod podczas startu</Polish>
+        </Key>
+        <Key ID="str_tis_main_main_onstartcodetooltip">
+            <English>Passed args: [_device]</English>
+            <Polish>Przekazane argumenty: [_device]</Polish>
+        </Key>
         <Key ID="str_tis_main_main_radiuslabel">
             <English>Radius</English>
             <Polish>Promień</Polish>
@@ -39,6 +95,10 @@
         <Key ID="str_tis_main_main_radiustooltip">
             <English>Radius is calculated in meters</English>
             <Polish>Promień jest wyliczany w metrach</Polish>
+        </Key>
+        <Key ID="str_tis_main_main_requireditem">
+            <English>Required item</English>
+            <Polish>Wymagany przedmiot</Polish>
         </Key>
         <Key ID="str_tis_main_main_settingstismaincategory">
             <English>TIS Main</English>

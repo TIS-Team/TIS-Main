@@ -10,7 +10,7 @@ class CfgPatches
 			"TIS_Anprc_152_Discharged_Radio_Item",
 			"TIS_TFAR_Invisible_Radio",
 			"TIS_TFAR_Invisible_Radio_Zeus",
-			"edenModuleTfarRadioJammers"
+			QGVAR(edenModuleTfarRadioJammers)
 		};
 		weapons[]={
 			"TIS_Anprc_152_Broken_Radio",

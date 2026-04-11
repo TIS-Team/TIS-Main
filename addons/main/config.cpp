@@ -7,7 +7,7 @@ class CfgPatches
         name = COMPONENT_NAME;
 		authors[]= { "Quallex", "Nerdi", "TIS" };
 		units[]={
-			"edenModuleDataDownload"
+			QGVAR(edenModuleDataDownload)
 		};
 		weapons[]={};
         requiredVersion = REQUIRED_VERSION;
@@ -91,3 +91,4 @@ class RscDisplayMain: RscStandardDisplay
 };
 
 #include "CfgEventHandlers.hpp"
+#include "CfgVehicles.hpp"
