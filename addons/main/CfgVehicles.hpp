@@ -13,7 +13,7 @@ class CfgVehicles {
     // Base module
     class GVAR(baseEdenModule): Module_F {
         author = ECSTRING(main,TISTeam);
-        category = QGVAR(TIS_EDEN);
+        category = QGVAR(TIS_MAIN);
         function = QFUNC(emptyFunction);
         functionPriority = 1;
         isGlobal = 0;

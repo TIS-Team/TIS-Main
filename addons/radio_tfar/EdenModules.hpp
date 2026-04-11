@@ -11,7 +11,7 @@ class Module_F: Logic {
 // Base module
 class GVAR(baseEdenModule): Module_F {
     author = ECSTRING(main,TISTeam);
-    category = QGVAR(TIS_EDEN);
+    category = QGVAR(TIS_TFAR);
     function = QFUNC(emptyFunction);
     functionPriority = 1;
     isGlobal = 0;
@@ -25,7 +25,7 @@ class GVAR(baseEdenModule): Module_F {
 
 class GVAR(edenModuleTfarRadioJammers): GVAR(baseEdenModule) {
     displayName = CSTRING(Module_TfarRadioJammers_DisplayName);
-    function = QFUNC(tfarRadioJammer);
+    function = QFUNC(edenModuleTfarRadioJammers);
     scope = 2;
     class Attributes: AttributesBase {
         class Radius: Edit {
@@ -33,13 +33,13 @@ class GVAR(edenModuleTfarRadioJammers): GVAR(baseEdenModule) {
             displayName = ECSTRING(main,RadiusLabel);
             tooltip = ECSTRING(main,RadiusTooltip);
             typeName = "NUMBER";
-            defaultValue = "1.0";
+            defaultValue = "1000";
         };
         class Strength: Edit {
             property = QGVAR(edenModuleTfarRadioJammers_Strength);
             displayName = ECSTRING(main,StrengthLabel);
             typeName = "NUMBER";
-            defaultValue = "1.0";
+            defaultValue = "50";
         };
         class Debug: Checkbox {
             property = QGVAR(edenModuleTfarRadioJammers_Debug);

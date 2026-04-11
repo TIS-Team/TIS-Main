@@ -4,29 +4,29 @@
 	Author: Aquerr (also known as Nerdi)
 	https://github.com/Aquerr
 
-    Edited script from Asherion and Rebel
+    The following script is based on a script from Asherion and Rebel
     Version 0.2.0
-    Original available at: https://forums.bistudio.com/forums/topic/203810-release-radio-jamming-script-for-task-force-radio/
+    Originally available at: https://forums.bistudio.com/forums/topic/203810-release-radio-jamming-script-for-task-force-radio/
 
 	Description:
         Script for TFAR jammers. SERVER ONLY!;
 
     Parameter(s):
-        0: ARRAY of object(s) (Required)- Entity(s) that will cause the radios to be jammed.
-        1: NUMBER (Optional)- Range of the jammer in Meters. Default is 1000.
-        2: NUMBER (Optional)- Strength of the jammer. Default is 50.
-        3: BOOL (Optional)- Enable Debug. Default is False.
-        Example: jamRadios = [[JAMMER],500] execVM "TFARjamRadios.sqf";
+        0: ARRAY of object(s) (Required)- Objects that should be treated as TFAR jammers
+        1: NUMBER (Optional)- Jammer working area radius in meters. Default: 1000.
+        2: NUMBER (Optional)- Strength of the jammer. Default: 50.
+        3: BOOL (Optional)- Debug mode (provides additional info in the console and map). Default: false.
 
 	Example:
-
+        [[jammer1, jammer2, jammer3]] call tis_main_radio_tfar_fnc_tfarRadioJammer;
+        [[jammer1, jammer2, jammer3], 2000, 25, true] call tis_main_radio_tfar_fnc_tfarRadioJammer;
 */
 
 if (!isServer) exitWith {};
 
 params [
     ["_jammers", [], [[]]],
-    ["_rad", 1000, [0]],
+    ["_radius", 1000, [0]],
     ["_strength", 50, [0]],
     ["_debug", false, [true]]
 ];
@@ -35,7 +35,19 @@ tisTfarJammers = _jammers;
 _strength = _strength - 1;
 
 
-//TODO: Add CBA per frame handler that executes every 5 second on each client. Else, try to make it server side by looping through all jammers and sending interfence only when needed.
+//compare distances between jammers and player to find nearest jammer
+tis_tfar_radio_fnc_findClosestJammerFunction = {
+    params ["_player", "_radius"];
+    _jammer = objNull;
+    _closestDistance = _radius;
+    {
+        if (_x distance _player < _closestDistance) then {
+            _jammer = _x;
+            _closestDistance = _x distance _player;
+        };
+    } forEach tisTfarJammers;
+    _jammer;
+};
 
 if (not (isNil QGVAR(JammersHandle)) && {GVAR(JammersHandle) isNotEqualTo ""}) then {
 	[GVAR(JammersHandle)] call CBA_fnc_removePerFrameHandler;
@@ -46,31 +58,29 @@ if (not (isNil QGVAR(JammersHandle)) && {GVAR(JammersHandle) isNotEqualTo ""}) t
 GVAR(JammersHandle) = [
     {
         params ["_args", "_handleId"];
-        private _rad = _args select 0;
+        private _radius = _args select 0;
         private _strength = _args select 1;
         private _debug = _args select 2;
 
         // Check if jammers are alive
         tisTfarJammers = tisTfarJammers select { alive _x };
 
-        {
-            //compare distances between jammers and player to find nearest jammer and set it as _jammer
-            _findClosestJammerFunction = {
-                params ["_player"];
-                _jammer = objNull;
-                _closestDist = 1000000;
-                {
-                    if (_x distance _player < _closestdist) then {
-                        _jammer = _x;
-                        _closestDist = _x distance _player;
-                    };
-                } forEach tisTfarJammers;
-                _jammer;
+        if (tisTfarJammers isEqualTo []) exitWith {
+            if (_debug) then {
+                [[], {
+                    systemChat "All jammers are dead! Stopping jammer handler.";
+                    deleteMarkerLocal "CIS_DebugMarker";
+                    deleteMarkerLocal "CIS_DebugMarker2";
+                }] remoteExec ["spawn"];
             };
+	        [GVAR(JammersHandle)] call CBA_fnc_removePerFrameHandler;
+	        GVAR(JammersHandle) = "";
+        };
 
+        {
             _player = _x;
 
-            _jammer = [_player] call _findClosestJammerFunction;
+            _jammer = [_player, _radius] call tis_tfar_radio_fnc_findClosestJammerFunction;
             if (isNull _jammer) then {
                 private _receivingDistanceMultiplicator = _player getVariable ["tf_receivingDistanceMultiplicator", 0];
                 private _sendingDistanceMultiplicator = _player getVariable ["tf_sendingDistanceMultiplicator", 0];
@@ -80,16 +90,20 @@ GVAR(JammersHandle) = [
                 if (_sendingDistanceMultiplicator != 1) then {
                     _player setVariable ["tf_sendingDistanceMultiplicator", 1, true];
                 };
+                if (_debug) then {
+                    deleteMarkerLocal "CIS_DebugMarker";
+                    deleteMarkerLocal "CIS_DebugMarker2";
+                };
                 continue;
             };
 
             // Set variables
             _dist = _player distance _jammer;
-            _distPercent = _dist / _rad;
+            _distPercent = _dist / _radius;
             _interference = 1;
             _sendInterference = 1;
 
-            if (_dist < _rad) then {
+            if (_dist < _radius) then {
                 _interference = _strength - (_distPercent * _strength) + 1; // Calculate the recieving interference, which has to be above 1 to have any effect.
                 _sendInterference = 1/_interference; //Calculate the sending interference, which needs to be below 1 to have any effect.
             };
@@ -106,7 +120,7 @@ GVAR(JammersHandle) = [
             
             // Debug chat and marker.
             if (_debug) then {                
-                [[_rad, _dist, _distPercent, _interference, _sendInterference, _jammer, tisTfarJammers], {
+                [[_radius, _dist, _distPercent, _interference, _sendInterference, _jammer, tisTfarJammers], {
                     params ["_rad", "_dist", "_distPercent", "_interference", "_sendInterference", "_jammer", "_jammers"];
 
                     deleteMarkerLocal "CIS_DebugMarker";
@@ -129,5 +143,5 @@ GVAR(JammersHandle) = [
         } forEach allPlayers;
     },
     5,
-    [_rad, _strength, _debug]
+    [_radius, _strength, _debug]
 ] call CBA_fnc_addPerFrameHandler;

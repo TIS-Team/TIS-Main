@@ -23,6 +23,8 @@ private _params = [
 	_strength, 
 	_debug
 ];
+if (_connectedObjects isEqualTo []) exitWith {};
+
 if (_syncedTriggers isNotEqualTo []) then {
 	{
 		private _trigger = _x;

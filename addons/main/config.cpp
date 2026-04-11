@@ -90,5 +90,7 @@ class RscDisplayMain: RscStandardDisplay
 	};
 };
 
+#include "CfgFactionClasses.hpp"
 #include "CfgEventHandlers.hpp"
 #include "CfgVehicles.hpp"
+#include "CfgUnitInsignia.hpp"
