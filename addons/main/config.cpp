@@ -6,7 +6,9 @@ class CfgPatches
 	{
         name = COMPONENT_NAME;
 		authors[]= { "Quallex", "Nerdi", "TIS" };
-		units[]={};
+		units[]={
+			"edenModuleDataDownload"
+		};
 		weapons[]={};
         requiredVersion = REQUIRED_VERSION;
 		requiredAddons[]=
