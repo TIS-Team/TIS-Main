@@ -3,7 +3,7 @@ PREP(convertToBossLocal);
 PREP(showBossBar);
 
 PREP(initDataDownload);
-PREP(doDataDownload);
+PREP(dataDownload);
 
 PREP(emptyFunction);
 

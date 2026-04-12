@@ -21,8 +21,32 @@
             <English>Custom health var name</English>
             <Polish>Własna nazwa zmiennej dla zdrowia</Polish>
         </Key>
+        <Key ID="str_tis_main_main_datadownloadcompleted">
+            <English>Download complete!</English>
+            <Polish>Pobieranie danych zakończone!</Polish>
+        </Key>
+        <Key ID="str_tis_main_main_datadownloadconnectionlost">
+            <English>Connection lost... Go to device and reconnect.</English>
+            <Polish>Utracono połączenie... Idź do urządzenie i połącz się ponownie.</Polish>
+        </Key>
+        <Key ID="str_tis_main_main_datadownloadconnectionlostmissingitem">
+            <English>Connection lost... You don't have required item to download data.</English>
+            <Polish>Utracono połączenie... Nie masz wymaganego przedmiotu do pobrania danych.</Polish>
+        </Key>
+        <Key ID="str_tis_main_main_datadownloadprogress">
+            <English>Progress: %1</English>
+            <Polish>Postęp: %1</Polish>
+        </Key>
+        <Key ID="str_tis_main_main_datadownloadstarted">
+            <English>Data download started!</English>
+            <Polish>Pobieranie danych rozpoczęte!</Polish>
+        </Key>
         <Key ID="str_tis_main_main_debuglabel">
             <English>Debug</English>
+        </Key>
+        <Key ID="str_tis_main_main_displaybuiltinhintmessageslabel">
+            <English>Display bulit-in hint messages</English>
+            <Polish>Pokazuj wbudowane komunikaty HINT</Polish>
         </Key>
         <Key ID="str_tis_main_main_downloadspeedlabel">
             <English>Download speed</English>
@@ -61,32 +85,40 @@
             <Polish>Kod podczas zakończenia</Polish>
         </Key>
         <Key ID="str_tis_main_main_oncompletecodetooltip">
-            <English>Passed args: [_device]</English>
-            <Polish>Przekazane argumenty: [_device]</Polish>
+            <English>Script is executed on the server side. 
+Passed args: [_caller, _device]</English>
+            <Polish>Skrypt wykonany jest po stronie serwera.
+Przekazane argumenty: [_caller, _device]</Polish>
         </Key>
         <Key ID="str_tis_main_main_onconnectionlostcodelabel">
             <English>On Connection Lost Code</English>
             <Polish>Kod podczas zerwania połączenia</Polish>
         </Key>
         <Key ID="str_tis_main_main_onconnectionlostcodetooltip">
-            <English>Passed args: [_device]</English>
-            <Polish>Przekazane argumenty: [_device]</Polish>
+            <English>Script is executed on the server side. 
+Passed args: [_caller, _device]</English>
+            <Polish>Skrypt wykonany jest po stronie serwera.
+Przekazane argumenty: [_caller, _device]</Polish>
         </Key>
         <Key ID="str_tis_main_main_onprogresscodelabel">
             <English>On Progress Code</English>
             <Polish>Kod podczas postępu</Polish>
         </Key>
         <Key ID="str_tis_main_main_onprogresscodetooltip">
-            <English>Passed args: [_device, _progress]</English>
-            <Polish>Przekazane argumenty: [_device, _progress]</Polish>
+            <English>Script is executed on the server side. 
+Passed args: [_caller, _device, _progress]</English>
+            <Polish>Skrypt wykonany jest po stronie serwera.
+Przekazane argumenty: [_caller, _device, _progress]</Polish>
         </Key>
         <Key ID="str_tis_main_main_onstartcodelabel">
             <English>On Start Code</English>
             <Polish>Kod podczas startu</Polish>
         </Key>
         <Key ID="str_tis_main_main_onstartcodetooltip">
-            <English>Passed args: [_device]</English>
-            <Polish>Przekazane argumenty: [_device]</Polish>
+            <English>Script is executed on the server side. 
+Passed args: [_caller, _device]</English>
+            <Polish>Skrypt wykonany jest po stronie serwera.
+Przekazane argumenty: [_caller, _device]</Polish>
         </Key>
         <Key ID="str_tis_main_main_radiuslabel">
             <English>Radius</English>
@@ -119,10 +151,6 @@
         <Key ID="str_tis_main_main_tisteam">
             <English>TIS-Team</English>
             <Polish>TIS-Team</Polish>
-        </Key>
-        <Key ID="str_tis_main_zeus_healthpointsmustbenumeric">
-            <English>Healthpoints must be a numeric value!</English>
-            <Polish>Punkty zdrowia muszą być numerczyną wartością!</Polish>
         </Key>
     </Package>
 </Project>

@@ -29,6 +29,7 @@ params [
     ["_speed", 1.0, [1.0]], 
     ["_considerCallerDistance", false, [true]], 
     ["_requiredItem", "", ["string"]], 
+    ["_displayBuiltInHintMessages", true, [true]],
     ["_onStartFunction", {}],
     ["_onProgressFunction", {}],
     ["_onConnectionLostFunction", {}],
@@ -75,10 +76,10 @@ if (!hasInterface) exitWith {};
             hint "You don't have required item to download data";
         };
 
-        ([_caller] + _arguments) remoteExec [QFUNC(doDataDownload), 2];
+        ([_caller] + _arguments) remoteExec [QFUNC(dataDownload), 2];
     },
     {},
-    [_device, _speed, _considerCallerDistance, _requiredItem, _onStartFunction, _onProgressFunction, _onConnectionLostFunction, _onCompleteFunction],
+    [_device, _speed, _considerCallerDistance, _requiredItem, _displayBuiltInHintMessages, _onStartFunction, _onProgressFunction, _onConnectionLostFunction, _onCompleteFunction],
     5,
     1,
     false,

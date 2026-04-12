@@ -12,7 +12,7 @@ class CfgVehicles {
 
     // Base module
     class GVAR(baseEdenModule): Module_F {
-        author = ECSTRING(main,TISTeam);
+        author = CSTRING(TISTeam);
         category = QGVAR(TIS_MAIN);
         function = QFUNC(emptyFunction);
         functionPriority = 1;
@@ -26,34 +26,40 @@ class CfgVehicles {
     //EDEN Modules
 
     class GVAR(edenModuleDataDownload): GVAR(baseEdenModule) {
-        displayName = ECSTRING(main,Module_DataDownload_DisplayName);
+        displayName = CSTRING(Module_DataDownload_DisplayName);
         function = QFUNC(edenModuleDataDownload);
         scope = 2;
         class Attributes: AttributesBase {
             class ActionName: Edit {
                 property = QGVAR(edenModuleDataDownload_ActionName);
-                displayName = ECSTRING(main,ActionName);
+                displayName = CSTRING(ActionName);
                 typeName = "STRING";
                 defaultValue = "'Download data'";
             };
             class Speed: Edit {
                 property = QGVAR(edenModuleDataDownload_Speed);
-                displayName = ECSTRING(main,DownloadSpeedLabel);
+                displayName = CSTRING(DownloadSpeedLabel);
                 tooltip = CSTRING(DownloadSpeedTooltip);
                 typeName = "NUMBER";
                 defaultValue = "1.0";
             };
             class ConsiderCallerDistance: Checkbox {
                 property = QGVAR(edenModuleDataDownload_ConsiderCallerDistance);
-                displayName = ECSTRING(main,ConsiderCallerDistanceLabel);
+                displayName = CSTRING(ConsiderCallerDistanceLabel);
                 typeName = "BOOL";
                 defaultValue = "false";
-            };
+            };            
             class RequiredItem: Edit {
                 property = QGVAR(edenModuleDataDownload_RequiredItem);
-                displayName = ECSTRING(main,RequiredItem);
+                displayName = CSTRING(RequiredItem);
                 typeName = "STRING";
                 defaultValue = "''";
+            };
+            class DisplayBuiltInHintMessages: Checkbox {
+                property = QGVAR(edenModuleDataDownload_DisplayBuiltInHintMessages);
+                displayName = CSTRING(DisplayBuiltInHintMessagesLabel);
+                typeName = "BOOL";
+                defaultValue = "true";
             };
             class OnStartFunction: Default {
                 property = QGVAR(edenModulePropertyCommon_OnStartCode);

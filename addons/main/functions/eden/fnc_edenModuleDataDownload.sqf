@@ -14,6 +14,7 @@ private _actionName = _logic getVariable ["ActionName", "Data download"];
 private _speed = _logic getVariable ["Speed", 1.0];
 private _considerCallerDistance = _logic getVariable ["ConsiderCallerDistance", false];
 private _requiredItem = _logic getVariable ["RequiredItem", ""];
+private _displayBuiltInHintMessages = _logic getVariable ["DisplayBuiltInHintMessages", true];
 private _onStartFunction = compile (_logic getVariable ["OnStartFunction", {}]);
 private _onProgressFunction = compile (_logic getVariable ["OnProgressFunction", {}]);
 private _onConnectionLostFunction = compile (_logic getVariable ["OnConnectionLostFunction", {}]);
@@ -33,6 +34,7 @@ private _initDataDownloadFunction = {
 		_speed, 
 		_considerCallerDistance, 
 		_requiredItem, 
+		_displayBuiltInHintMessages,
 		_onStartFunction, 
 		_onProgressFunction,
 		_onConnectionLostFunction, 
