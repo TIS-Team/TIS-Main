@@ -28,6 +28,10 @@ Radio:
 
 Food:
 - [x] Tisowianka (custom water bottle)
+  
+EDEN:
+- [x] Module - Data download
+- [x] Module - TFAR radio jammers
 
 Zeus:
 - [x] Module - Convert unit to boss
