@@ -16,15 +16,16 @@
 		2: NUMBER - download speed. Default: 1.0
         3: BOOLEAN - if distance to object should be taken to account and stop the download when distance is more than 11 meteres. Default: false
 		4: STRING - required item to start data download. Default: empty
+        5: BOOLEAN - if built-in hint messages (on start, progress and finish) should be displayed. Default: true
         6: CODE - code on strat. Default: empty code block
         7: CODE - code on progress. Default: empty code block
         8: CODE - code on connection lost, valid only when caller distance is set to true. Default: empty code block
         9: CODE - code on completion. Default: empty code block
-        9: BOOLEAN - display builtin hint messages. Default: true
+        10: BOOLEAN - display builtin hint messages. Default: true
 
 	Example:
-        [_player, _device] call tis_main_main_dataDownload;
-        [_player, _device, 2.5, true, "Toolkit", {hint "finished!"}] call tis_main_main_dataDownload;
+        [_player, _device] call tis_main_main_fnc_dataDownload;
+        [_player, _device, 2.5, true, "Toolkit", {hint "finished!"}] call tis_main_main_fnc_dataDownload;
 */
 
 if (!isServer) exitWith {};
