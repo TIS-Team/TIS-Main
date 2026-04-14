@@ -45,7 +45,7 @@ params [
 // Code for server + future players
 if (isServer && {_global && {isMultiplayer && {isNil {_device getVariable QGVAR(init_dataDownload_JIP)}}}}) exitWith {
 
-    private _id = [QGVAR(initDataDownloadEvent), [_device, _actionTitle, _speed, _considerCallerDistance, _requiredItem, _onStartFunction, _onProgressFunction, _onConnectionLostFunction, _onCompleteFunction, false]] call CBA_fnc_globalEventJIP;
+    private _id = [QGVAR(initDataDownloadEvent), [_device, _actionTitle, _speed, _considerCallerDistance, _requiredItem, _displayBuiltInHintMessages, _onStartFunction, _onProgressFunction, _onConnectionLostFunction, _onCompleteFunction, false]] call CBA_fnc_globalEventJIP;
 
     // Remove JIP EH if object is deleted
     [_id, _device] call CBA_fnc_removeGlobalEventJIP;
@@ -66,7 +66,7 @@ if (!hasInterface) exitWith {};
     {},
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
-        private _device = _arguments select 0;
+        private _device = _target;
         private _isDownloading = _device getVariable ["tis_is_downloading", false];
         if (_isDownloading) exitWith {
             hint "Download is already in progress";
@@ -85,7 +85,7 @@ if (!hasInterface) exitWith {};
     },
     {},
     [_device, _speed, _considerCallerDistance, _requiredItem, _displayBuiltInHintMessages, _onStartFunction, _onProgressFunction, _onConnectionLostFunction, _onCompleteFunction],
-    5,
+    3,
     1,
     false,
     false
