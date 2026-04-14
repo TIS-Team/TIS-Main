@@ -33,7 +33,7 @@ class RscDisplayStart: RscStandardDisplay
 			{
 				class Logo: RscPictureKeepAspect
 				{
-					onLoad = QUOTE((_this select 0) ctrlsettext 'PATHTOF(logo_4k.paa)');
+					onLoad = QUOTE((_this select 0) ctrlsettext 'PATHTOF(data\logo_4k.paa)');
 				};
 			};
 		};
@@ -49,7 +49,7 @@ class RscDisplayLoadMission: RscStandardDisplay
 			{
 				class Logo: RscPictureKeepAspect
 				{
-					onLoad = QUOTE((_this select 0) ctrlsettext 'PATHTOF(logo_4k.paa)');
+					onLoad = QUOTE((_this select 0) ctrlsettext 'PATHTOF(data\logo_4k.paa)');
 				};
 			};
 		};
@@ -65,7 +65,7 @@ class RscDisplayNotFreeze: RscStandardDisplay
 			{
 				class Logo: RscPictureKeepAspect
 				{
-					onLoad = QUOTE((_this select 0) ctrlsettext 'PATHTOF(logo_4k.paa)');
+					onLoad = QUOTE((_this select 0) ctrlsettext 'PATHTOF(data\logo_4k.paa)');
 				};
 			};
 		};
@@ -79,12 +79,12 @@ class RscDisplayMain: RscStandardDisplay
 		class Logo: RscActivePicture
 		{
 			tooltip="$STR_ConnectWithTIS";
-			text = QPATHTOF(logo.paa);
+			text = QPATHTOF(data\logo.paa);
 			onButtonClick="connectToServer ['tispmc.pl', 25565, '132'];";
 		};
 		class LogoApex: Logo
 		{
-			text = QPATHTOF(logo.paa);
+			text = QPATHTOF(data\logo.paa);
 			onButtonClick="connectToServer ['tispmc.pl', 25565, '132'];";
 		};
 	};

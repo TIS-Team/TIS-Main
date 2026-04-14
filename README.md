@@ -36,6 +36,7 @@ EDEN:
 Zeus:
 - [x] Module - Convert unit to boss
 - [x] Module - Refill NVG battery
+- [x] Module - Diagnostics Monitor 
 
 ## Dependencies
 

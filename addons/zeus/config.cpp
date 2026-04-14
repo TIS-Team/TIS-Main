@@ -8,7 +8,8 @@ class CfgPatches
 		authors[]= { "TIS" };
 		units[]={
 			QGVAR(moduleConvertToBoss),
-			QGVAR(moduleRefillNvgBattery)
+			QGVAR(moduleRefillNvgBattery),
+			QGVAR(moduleToggleDiagnosticMonitor)
 		};
 		weapons[]={};
         requiredVersion = REQUIRED_VERSION;

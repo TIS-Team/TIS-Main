@@ -9,6 +9,18 @@
             <English>Healthpoints must be a numeric value!</English>
             <Polish>Punkty zdrowia muszą być numerczyną wartością!</Polish>
         </Key>
+        <Key ID="str_tis_main_zeus_module_converttoboss_displayname">
+            <English>BOSS: Convert to boss</English>
+            <Polish>BOSS: Zamień na bossa</Polish>
+        </Key>
+        <Key ID="str_tis_main_zeus_module_refillnvgbattery_displayname">
+            <English>NVG: Refill NVG Battery</English>
+            <Polish>NVG: Odnów baterię NVG</Polish>
+        </Key>
+        <Key ID="str_tis_main_zeus_module_togglediagnosticmonitor_displayname">
+            <English>DIAG: Toggle diagnostic monitor</English>
+            <Polish>DIAG: Włącz/Wyłącz monitor diagnostyki</Polish>
+        </Key>
         <Key ID="str_tis_main_zeus_mustselectobject">
             <English>Must select an object!</English>
             <Polish>Musisz wybrać obiekt!</Polish>
@@ -20,6 +32,10 @@
         <Key ID="str_tis_main_zeus_nvgbatteryrefilled">
             <English>NVG battery refilled!</English>
             <Polish>Bateria NVG odnowiona!</Polish>
+        </Key>
+        <Key ID="str_tis_main_zeus_toggleddiagmonitor">
+            <English>Toggled diagnostic monitor</English>
+            <Polish>Przełączono monitor diagnostyki</Polish>
         </Key>
     </Package>
 </Project>

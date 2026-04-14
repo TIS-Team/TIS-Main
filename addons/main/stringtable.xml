@@ -60,10 +60,6 @@
             <English>HP</English>
             <Polish>HP</Polish>
         </Key>
-        <Key ID="str_tis_main_main_module_converttoboss_displayname">
-            <English>BOSS: Convert to boss</English>
-            <Polish>BOSS: Zamień na bossa</Polish>
-        </Key>
         <Key ID="str_tis_main_main_module_datadownload_description">
             <English>Adds data download mechanism to synced objects.</English>
             <Polish>Pozwala dodać do zsynchronizowanych obiektów mechanizm pobierania danych.</Polish>
@@ -71,10 +67,6 @@
         <Key ID="str_tis_main_main_module_datadownload_displayname">
             <English>Data download location</English>
             <Polish>Miejsce pobierania danych</Polish>
-        </Key>
-        <Key ID="str_tis_main_main_module_refillnvgbattery_displayname">
-            <English>NVG: Refill NVG Battery</English>
-            <Polish>NVG: Odnów baterię NVG</Polish>
         </Key>
         <Key ID="str_tis_main_main_namelabel">
             <English>Name</English>
