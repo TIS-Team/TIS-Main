@@ -10,20 +10,23 @@
 
 	Parameter(s):
         0: PLAYER - REQUIRED - the player that want to monitor its and server diagnoatics data
+		1: NUMBER - OPTIONAL - refresh interval (applied only when server side handler initializes)
 	Example:
 		[player] call tis_main_main_fnc_toggleDiagnosticMonitor;
+		[player, 15] call tis_main_main_fnc_toggleDiagnosticMonitor;
 */
 
 params [
-	["_player", objNull, [objNull]]
+	["_player", objNull, [objNull]],
+	["_interval", 5, [1]]
 ];
 
 if (isNull _player) exitWith {
 	hint "Player must be provided";
 };
 
-[[_player], {
-	params ["_player"];
+[[_player, _interval], {
+	params ["_player", "_interval"];
 
 	if (isNil QGVAR(DiagnosticMonitorPlayers)) then {
 		GVAR(DiagnosticMonitorPlayers) = [_player];
@@ -52,16 +55,20 @@ if (isNull _player) exitWith {
 			// Server logic
 			private _serverFps = diag_fps; 
 			private _serverMinFps = diag_fpsMin; 
-			private _serverObjCount = count allMissionObjects "All"; 
 			private _serverActiveScripts = diag_activeScripts;  
+
+			private _missionObjects = allMissionObjects "All";
+			private _serverObjCount = count _missionObjects; 
+			private _serverAIUnitsCount = count (_missionObjects select { (_x isKindOf "Man") && {!isPlayer _x} && {alive _x} });
+			private _serverEnabledSimulationObjectsCount = count (_missionObjects select { simulationEnabled _x });
 
 			{
 				_user = _x;
 
 				// Client logic
-				[[_serverFps, _serverMinFps, _serverObjCount, _serverActiveScripts], {
+				[[_serverFps, _serverMinFps, _serverObjCount, _serverAIUnitsCount, _serverEnabledSimulationObjectsCount, _serverActiveScripts], {
 
-					params ["_serverFps", "_serverMinFps", "_serverObjCount", "_serverActiveScripts"];
+					params ["_serverFps", "_serverMinFps", "_serverObjCount", "_serverAIUnitsCount", "_serverEnabledSimulationObjectsCount", "_serverActiveScripts"];
 
 					private _serverSpawnedScripts = _serverActiveScripts select 0;
 					private _serverExecVMScripts = _serverActiveScripts select 1;
@@ -82,7 +89,9 @@ if (isNull _player) exitWith {
 
 					_monitorText = _monitorText + "<t color='#FF0000' align='center'>======= SERVER =======</t><br/>";
 					_monitorText = _monitorText + (format ["FPS: %1", _serverFps]) + "<br/>";
-					_monitorText = _monitorText + (format ["Min FPS: %1", _serverMinFps]) + "<br/>";
+					_monitorText = _monitorText + (format ["Min FPS: %1", _serverMinFps]) + "<br/><br/>";
+					_monitorText = _monitorText + (format ["AI units: %1", _serverAIUnitsCount]) + "<br/>";
+					_monitorText = _monitorText + (format ["Objects with simulation: %1", _serverEnabledSimulationObjectsCount]) + "<br/>";
 					_monitorText = _monitorText + (format ["Total objects: %1", _serverObjCount]) + "<br/><br/>";
 					_monitorText = _monitorText + "Active scripts:<br/>";
 					_monitorText = _monitorText + (format ["- spawn: %1", _serverSpawnedScripts]) + "<br/>";
@@ -108,7 +117,7 @@ if (isNull _player) exitWith {
 			} forEach _users;
 			
 		},
-		5, // Update every 5 seconds
+		_interval,
 		[]
 	] call CBA_fnc_addPerFrameHandler;
 
