@@ -16,4 +16,10 @@ class CfgFactionClasses {
         priority = 2;
         side = 7;
     };
+    
+    class GVAR(TIS_ARSENAl) {
+        displayName = "TIS Arsenal";
+        priority = 2;
+        side = 7;
+    };
 };

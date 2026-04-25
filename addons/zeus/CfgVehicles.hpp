@@ -38,4 +38,12 @@ class CfgVehicles {
         function = QFUNC(moduleToggleDiagnosticMonitor);
         icon = "a3\ui_f\data\gui\rsc\rscdisplayarcademap\icon_config_ca.paa";
     };
+
+    class GVAR(moduleAddAceArsenalAmmoOnly): GVAR(baseModule) {
+        category = QGVAR(TIS_ARSENAL);
+        curatorCanAttach = 1;
+        displayName = CSTRING(Module_AddAceArsenalAmmoOnly_DisplayName);
+        function = QFUNC(moduleAddAceArsenalAmmoOnly);
+        icon = "a3\ui_f\data\gui\rsc\rscdisplayarcademap\icon_config_ca.paa";
+    };
 };

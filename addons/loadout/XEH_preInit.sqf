@@ -20,14 +20,28 @@ if (hasInterface) then {
 					{
 						player setVariable [QGVAR(SavedLoadout), getUnitLoadout player];
 						hint LLSTRING(RespawnLoadoutSaved);
-					}
+					},
+					nil,
+					1.5,
+					true,
+					false,
+					"",
+					"true",
+					3
 				];
 				_arsenalBox addAction [
 					format ["<t color='#FFaa00'>%1</t>", "Reset respawn loadout"],
 					{
 						player setVariable [QGVAR(SavedLoadout), []];
 						hint LLSTRING(RespawnLoadoutReset);
-					}
+					},
+					nil,
+					1.5,
+					true,
+					false,
+					"",
+					"true",
+					3
 				];
 				_arsenalBox setVariable ["tis_ace_arsenal_actions_added", true];
 			};

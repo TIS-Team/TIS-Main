@@ -9,7 +9,8 @@ class CfgPatches
 		units[]={
 			QGVAR(moduleConvertToBoss),
 			QGVAR(moduleRefillNvgBattery),
-			QGVAR(moduleToggleDiagnosticMonitor)
+			QGVAR(moduleToggleDiagnosticMonitor),
+			QGVAR(moduleAddAceArsenalAmmoOnly)
 		};
 		weapons[]={};
         requiredVersion = REQUIRED_VERSION;
