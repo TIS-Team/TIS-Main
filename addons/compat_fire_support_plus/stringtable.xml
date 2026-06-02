@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="TIS-Main">
+    <Package name="compat_fire_support_plus">
+        <Key ID="str_tis_main_compat_fire_support_plus_setting_addbrokenitemvariantonfiresupportempexplosion">
+            <English>Add broken item variant on EMP Explosion</English>
+            <Polish>Daj zniszczony wariant przedmiotu po eksplozji EMP</Polish>
+        </Key>
+        <Key ID="str_tis_main_compat_fire_support_plus_subcategory_firesupportplus">
+            <English>Fire Support Plus</English>
+        </Key>
+    </Package>
+</Project>

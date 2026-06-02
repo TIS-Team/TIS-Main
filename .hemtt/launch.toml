@@ -1,12 +1,13 @@
 [default]
 workshop = [
-    "450814997", # CBA_A3's Workshop ID
-    "3499977893", # Advanced Developer Tools's Workshop ID.
-    "1779063631", # Zeus Enhanced,
-    "894678801", # Task Force Arrowhead Radio,
+    "450814997", # CBA_A3's Workshop
+    "3499977893", # Advanced Developer Tools's Workshop
+    "1779063631", # Zeus Enhanced
+    "894678801", # Task Force Arrowhead Radio
     "2291129343", # IMS - Improved Melee System
     "2789152015", # WBK Zombies
-    "463939057", # ACE3's Workshop ID
+    "463939057", # ACE3's Workshop
+    "2699465073" # Fire Support Plus
 ]
 
 # "2857072858" # Empires of old
