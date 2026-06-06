@@ -12,7 +12,7 @@ class CfgPatches
 		{
 			"cba_main",
 			"tis_main_main",
-			"WNZ_EMP_SystemsXEH"
+			"WBK_MeleeMechanics"
 		};
 		skipWhenMissingDependencies = 1;
         requiredVersion = REQUIRED_VERSION;
