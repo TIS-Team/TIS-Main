@@ -1,8 +1,12 @@
 class CfgVehicles {
     class Logic;
     class Module_F: Logic {
-        class Default;
-        class AttributesBase;
+        class AttributesBase {
+            class Default;
+            class Edit;
+            class Checkbox;
+            class ModuleDescription;
+        };
         class ModuleDescription;
     };
 
@@ -26,31 +30,25 @@ class CfgVehicles {
                                  // set to 0 to have it start immediately at mission start instead
 
         class Arguments: AttributesBase {
-            class Duration {
+            class Duration: Edit {
                 displayName = "Duration (seconds)";
                 tooltip = "How long the countdown runs before ending";
                 property = QGVAR(edenModuleTimerProperty_Duration);
-                control = "Edit";
                 typeName = "NUMBER";
-                class Attributes {};
                 defaultValue = "60";
             };
-            class Context {
+            class Context: Edit {
                 displayName = "Context Label";
                 tooltip = "Shown on the countdown display, and passed to your logic dispatch functions";
                 property = QGVAR(edenModuleTimerProperty_Context);
-                control = "Edit";
                 typeName = "STRING";
-                class Attributes {};
                 defaultValue = "";
             };
-            class TimerId {
+            class TimerId: Edit {
                 displayName = "Timer ID (optional)";
                 tooltip = "Unique ID for this timer. Leave blank to auto-generate one from the module itself";
                 property = QGVAR(edenModuleTimerProperty_Id);
-                control = "Edit";
                 typeName = "STRING";
-                class Attributes {};
                 defaultValue = "";
             };
             class TargetSide {
@@ -59,7 +57,6 @@ class CfgVehicles {
                 property = QGVAR(edenModuleTimerProperty_Side);
                 control = "Combo";
                 typeName = "STRING";
-                class Attributes {};
                 class values {
                     class All {
                         name = "All Sides";
@@ -84,14 +81,12 @@ class CfgVehicles {
                     };
                 };
             };
-            class IncludeGroups {
+            class IncludeGroups: Checkbox {
                 displayName = "Sync = Whole Group";
                 tooltip = "If enabled, syncing a single unit makes its entire group a target, not just that unit";
                 property = QGVAR(edenModuleTimerProperty_IncludeGroups);
-                control = "Checkbox";
                 typeName = "BOOL";
-                class Attributes {};
-                defaultValue = "0";
+                defaultValue = "false";
             };
             class OnStartFunction: Default {
                 property = QEGVAR(main,edenModulePropertyCommon_OnStartCode);
@@ -117,6 +112,7 @@ class CfgVehicles {
                 defaultValue = "''";
                 control = "editcodemulti5";
             };
+            class ModuleDescription: ModuleDescription {};
         };
 
         class ModuleDescription: ModuleDescription {

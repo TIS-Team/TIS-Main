@@ -35,7 +35,7 @@ GVAR(timerServerHandler) = [{
 
     {
         private _timerId = _x;
-        (GVAR(activeTimersServer) get _timerId) params ["_endTime", "_label", "_codeOnUpdate", "_codeOnEnd"];
+        (GVAR(activeTimersServer) get _timerId) params ["_endTime", "_label", "_codeOnUpdate"];
         private _remaining = _endTime - serverTime;
 
         if (_remaining <= 0) then {
@@ -48,7 +48,7 @@ GVAR(timerServerHandler) = [{
     {
         private _timerData = (GVAR(activeTimersServer) get _x);
         private _label = _timerData select 1;
-        private _codeOnEnd = _timerData select 4;
+        private _codeOnEnd = _timerData select 3;
         GVAR(activeTimersServer) deleteAt _x;
         [_x, _label] call _codeOnEnd;
     } forEach _idsToRemove;
