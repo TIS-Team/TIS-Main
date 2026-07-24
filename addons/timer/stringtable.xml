@@ -5,11 +5,11 @@
             <English>Starts a countdown timer. Sync to units/groups and/or restrict by side to limit who sees it; leave unsynced with Side = All for everyone. Optionally sync to a Trigger module to delay the start.</English>
             <Polish>Startuje odliczanie. Zsychnronizuj z wyzalaczem aby uruchomić licznik w odpowiednim momencie. Opcjonalnie: Zscyhronizuj z jednostkami aby ograniczyć kto widzi licznik.</Polish>
         </Key>
-        <Key ID="str_tis_main_timer_oncompletecodelabel">
+        <Key ID="str_tis_main_timer_edenmodulecountdowntimer_oncompletecode">
             <English>On Complete Code</English>
             <Polish>Kod podczas zakończenia</Polish>
         </Key>
-        <Key ID="str_tis_main_timer_oncompletecodetooltip">
+        <Key ID="str_tis_main_timer_edenmodulecountdowntimer_oncompletecode_tooltip">
             <English>Script is executed on the server side. 
 Passed args: [_timerId, _label]</English>
             <Polish>Skrypt uruchamiany jest po stronie serwera. 
@@ -30,6 +30,14 @@ Przekazane argumenty: [_timerId, _remainingTimeSeconds, _label]</Polish>
 Passed args: [_timerId, _label]</English>
             <Polish>Skrypt uruchamiany jest po stronie serwera. 
 Przekazane argumenty: [_timerId, _label]</Polish>
+        </Key>
+        <Key ID="str_tis_main_timer_edenmodulecountdowntimer_duration">
+            <English>Duration (seconds)</English>
+            <Polish>Czas (sekundy)</Polish>
+        </Key>
+        <Key ID="str_tis_main_timer_edenmodulecountdowntimer_duration_tooltip">
+            <English>How long the countdown runs before ending</English>
+            <Polish>Jak długi czas ma trwać odliczanie</Polish>
         </Key>
     </Package>
 </Project>

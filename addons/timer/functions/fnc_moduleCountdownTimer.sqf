@@ -27,13 +27,13 @@ if (!_activated) exitWith {};
 
 private _duration        = _logic getVariable [QGVAR(edenModuleTimerProperty_Duration), 60];
 private _label         = _logic getVariable [QGVAR(edenModuleTimerProperty_Context), ""];
-private _timerId          = _logic getVariable [QGVAR(edenModuleTimerProperty_Id), ""];
 private _sideAttr        = _logic getVariable [QGVAR(edenModuleTimerProperty_Side), "ALL"];
 private _includeGroups   = _logic getVariable [QGVAR(edenModuleTimerProperty_IncludeGroups), false];
 private _codeOnStart = compile (_logic getVariable [QEGVAR(main,edenModulePropertyCommon_OnStartCode), {}]);
 private _codeOnUpdate = compile (_logic getVariable [QEGVAR(main,edenModulePropertyCommon_OnProgressCode), {}]);
 private _codeOnEnd = compile (_logic getVariable [QGVAR(edenModulePropertyCommon_OnCompleteCode), {}]);
 
+private _timerId          = "TIMER_ID_1";
 if (_timerId == "") then { _timerId = str _logic; }; // auto-generate a stable unique ID from the module object
 
 // Build the _targets array from synced units/groups and the side attribute.

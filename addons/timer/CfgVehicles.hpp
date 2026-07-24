@@ -4,6 +4,7 @@ class CfgVehicles {
         class AttributesBase {
             class Default;
             class Edit;
+            class Combo;
             class Checkbox;
             class ModuleDescription;
         };
@@ -24,38 +25,30 @@ class CfgVehicles {
     class GVAR(edenModuleCountdownTimer): GVAR(baseEdenModule) {
         scope = 2;
         category = QEGVAR(main,TIS_MAIN);
-        displayName = "Countdown Timer";
+        displayName = CSTRING(Module_CountdownTimer_DisplayName);
         function = QFUNC(moduleCountdownTimer);
         isTriggerActivated = 1; // 1 = only starts when synced to and triggered by a Trigger module;
                                  // set to 0 to have it start immediately at mission start instead
 
         class Arguments: AttributesBase {
             class Duration: Edit {
-                displayName = "Duration (seconds)";
-                tooltip = "How long the countdown runs before ending";
+                displayName = CSTRING(edenModuleCountdownTimer_Duration);
+                tooltip = CSTRING(edenModuleCountdownTimer_Duration_Tooltip);
                 property = QGVAR(edenModuleTimerProperty_Duration);
                 typeName = "NUMBER";
                 defaultValue = "60";
             };
             class Context: Edit {
-                displayName = "Context Label";
-                tooltip = "Shown on the countdown display, and passed to your logic dispatch functions";
+                displayName = CSTRING(edenModuleCountdownTimer_ContextLabel);
+                tooltip = CSTRING(edenModuleCountdownTimer_ContextLabel_Tooltip);
                 property = QGVAR(edenModuleTimerProperty_Context);
                 typeName = "STRING";
                 defaultValue = "";
             };
-            class TimerId: Edit {
-                displayName = "Timer ID (optional)";
-                tooltip = "Unique ID for this timer. Leave blank to auto-generate one from the module itself";
-                property = QGVAR(edenModuleTimerProperty_Id);
-                typeName = "STRING";
-                defaultValue = "";
-            };
-            class TargetSide {
-                displayName = "Restrict to Side";
-                tooltip = "Only players on this side see the countdown (combined with any synced units/groups below)";
+            class TargetSide: Combo {
+                displayName = CSTRING(edenModuleCountdownTimer_TargetSide);
+                tooltip = CSTRING(edenModuleCountdownTimer_TargetSide_Tooltip);
                 property = QGVAR(edenModuleTimerProperty_Side);
-                control = "Combo";
                 typeName = "STRING";
                 class values {
                     class All {
@@ -82,15 +75,15 @@ class CfgVehicles {
                 };
             };
             class IncludeGroups: Checkbox {
-                displayName = "Sync = Whole Group";
-                tooltip = "If enabled, syncing a single unit makes its entire group a target, not just that unit";
+                displayName = CSTRING(edenModuleCountdownTimer_IncludeGroups);
+                tooltip = CSTRING(edenModuleCountdownTimer_IncludeGroups_Tooltip);
                 property = QGVAR(edenModuleTimerProperty_IncludeGroups);
                 typeName = "BOOL";
                 defaultValue = "false";
             };
             class OnStartFunction: Default {
                 property = QEGVAR(main,edenModulePropertyCommon_OnStartCode);
-                displayName = "Code on start";
+                displayName = CSTRING(edenModuleCountdownTimer_OnStartCode);
                 tooltip = CSTRING(OnStartCodeTooltip);
                 typeName = "STRING";
                 defaultValue = "''";
@@ -98,7 +91,7 @@ class CfgVehicles {
             };
             class OnProgressFunction: Default {
                 property = QEGVAR(main,edenModulePropertyCommon_OnProgressCode);
-                displayName = CSTRING(OnProgressCodeLabel);
+                displayName = CSTRING(edenModuleCountdownTimer_OnProgressCode);
                 tooltip = CSTRING(OnProgressCodeTooltip);
                 typeName = "STRING";
                 defaultValue = "''";
@@ -106,7 +99,7 @@ class CfgVehicles {
             };
             class OnCompleteFunction: Default {
                 property = QGVAR(edenModulePropertyCommon_OnCompleteCode);
-                displayName = CSTRING(OnCompleteCodeLabel);
+                displayName = CSTRING(edenModuleCountdownTimer_OnCompleteCode);
                 tooltip = CSTRING(OnCompleteCodeTooltip);
                 typeName = "STRING";
                 defaultValue = "''";
