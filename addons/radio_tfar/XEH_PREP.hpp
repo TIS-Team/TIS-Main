@@ -1,5 +1,6 @@
 PREP(tfarRadioJammers);
 PREP(tfarRadioJammerDeactivateAction);
+PREP(tfarRadioJammerDoDeactivate);
 
 // Eden
 PREP_BY_PATH(edenModuleTfarRadioJammers,functions\eden\fnc_edenModuleTfarRadioJammers.sqf);
