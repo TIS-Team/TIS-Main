@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="TIS-Main">
     <Package name="timer">
-        <Key ID="str_tis_main_timer_module_countdowntimer_description">
-            <English>Starts a countdown timer. Sync to units/groups and/or restrict by side to limit who sees it; leave unsynced with Side = All for everyone. Optionally sync to a Trigger module to delay the start.</English>
-            <Polish>Startuje odliczanie. Zsychnronizuj z wyzalaczem aby uruchomić licznik w odpowiednim momencie. Opcjonalnie: Zscyhronizuj z jednostkami aby ograniczyć kto widzi licznik.</Polish>
+        <Key ID="str_tis_main_timer_edenmodulecountdowntimer_contextlabel">
+            <English>Context/Label</English>
+            <Polish>Kontekst/Tytuł</Polish>
+        </Key>
+        <Key ID="str_tis_main_timer_edenmodulecountdowntimer_contextlabel_tooltip">
+            <English>Displays next to timer and is passed to different functions as argument</English>
+            <Polish>Prezentuje się obok zegara i przekazywany jest do różnych funkcji jago argument</Polish>
+        </Key>
+        <Key ID="str_tis_main_timer_edenmodulecountdowntimer_duration">
+            <English>Duration (seconds)</English>
+            <Polish>Czas (sekundy)</Polish>
+        </Key>
+        <Key ID="str_tis_main_timer_edenmodulecountdowntimer_duration_tooltip">
+            <English>How long the countdown runs before ending</English>
+            <Polish>Jak długi czas ma trwać odliczanie</Polish>
+        </Key>
+        <Key ID="str_tis_main_timer_edenmodulecountdowntimer_includegroups">
+            <English>Sync = Whole Group</English>
+            <Polish>Synchronizacja = groupa jednostki</Polish>
+        </Key>
+        <Key ID="str_tis_main_timer_edenmodulecountdowntimer_includegroups_tooltip">
+            <English>If enabled, syncing a single unit makes its entire group a target, not just that unit</English>
+            <Polish>Jeśli włączone, grupa synchronizowanej jednostki jest brana jako cel, zamiast owej jednostki</Polish>
         </Key>
         <Key ID="str_tis_main_timer_edenmodulecountdowntimer_oncompletecode">
             <English>On Complete Code</English>
@@ -14,6 +34,26 @@
 Passed args: [_timerId, _label]</English>
             <Polish>Skrypt uruchamiany jest po stronie serwera. 
 Przekazane argumenty: [_timerId, _label]</Polish>
+        </Key>
+        <Key ID="str_tis_main_timer_edenmodulecountdowntimer_onstartcode">
+            <English>On start code</English>
+            <Polish>Kod przy starcie</Polish>
+        </Key>
+        <Key ID="str_tis_main_timer_edenmodulecountdowntimer_targetside">
+            <English>Target Side</English>
+            <Polish>Docelowa strona</Polish>
+        </Key>
+        <Key ID="str_tis_main_timer_edenmodulecountdowntimer_targetside_tooltip">
+            <English>The timer will be shown for this side only (combined with any synced units/groups below)</English>
+            <Polish>Zegar zostanie pokazany tylko dla wybranej strony (wraz z synchronizowanymi jednostkami/grupami)</Polish>
+        </Key>
+        <Key ID="str_tis_main_timer_module_countdowntimer_description">
+            <English>Starts a countdown timer. Sync to units/groups and/or restrict by side to limit who sees it; leave unsynced with Side = All for everyone. Optionally sync to a Trigger module to delay the start.</English>
+            <Polish>Startuje odliczanie. Zsychnronizuj z wyzalaczem aby uruchomić licznik w odpowiednim momencie. Opcjonalnie: Zscyhronizuj z jednostkami aby ograniczyć kto widzi licznik.</Polish>
+        </Key>
+        <Key ID="str_tis_main_timer_module_countdowntimer_displayname">
+            <English>Countdown Timer</English>
+            <Polish>Zegar odliczania</Polish>
         </Key>
         <Key ID="str_tis_main_timer_onprogresscodelabel">
             <English>On Progress Code</English>
@@ -30,14 +70,6 @@ Przekazane argumenty: [_timerId, _remainingTimeSeconds, _label]</Polish>
 Passed args: [_timerId, _label]</English>
             <Polish>Skrypt uruchamiany jest po stronie serwera. 
 Przekazane argumenty: [_timerId, _label]</Polish>
-        </Key>
-        <Key ID="str_tis_main_timer_edenmodulecountdowntimer_duration">
-            <English>Duration (seconds)</English>
-            <Polish>Czas (sekundy)</Polish>
-        </Key>
-        <Key ID="str_tis_main_timer_edenmodulecountdowntimer_duration_tooltip">
-            <English>How long the countdown runs before ending</English>
-            <Polish>Jak długi czas ma trwać odliczanie</Polish>
         </Key>
     </Package>
 </Project>

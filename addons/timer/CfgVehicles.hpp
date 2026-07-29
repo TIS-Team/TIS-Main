@@ -24,13 +24,12 @@ class CfgVehicles {
 
     class GVAR(edenModuleCountdownTimer): GVAR(baseEdenModule) {
         scope = 2;
-        category = QEGVAR(main,TIS_MAIN);
         displayName = CSTRING(Module_CountdownTimer_DisplayName);
         function = QFUNC(moduleCountdownTimer);
         isTriggerActivated = 1; // 1 = only starts when synced to and triggered by a Trigger module;
                                  // set to 0 to have it start immediately at mission start instead
 
-        class Arguments: AttributesBase {
+        class Attributes: AttributesBase {
             class Duration: Edit {
                 displayName = CSTRING(edenModuleCountdownTimer_Duration);
                 tooltip = CSTRING(edenModuleCountdownTimer_Duration_Tooltip);
@@ -91,7 +90,7 @@ class CfgVehicles {
             };
             class OnProgressFunction: Default {
                 property = QEGVAR(main,edenModulePropertyCommon_OnProgressCode);
-                displayName = CSTRING(edenModuleCountdownTimer_OnProgressCode);
+                displayName = CSTRING(onprogresscodelabel);
                 tooltip = CSTRING(OnProgressCodeTooltip);
                 typeName = "STRING";
                 defaultValue = "''";
@@ -100,7 +99,7 @@ class CfgVehicles {
             class OnCompleteFunction: Default {
                 property = QGVAR(edenModulePropertyCommon_OnCompleteCode);
                 displayName = CSTRING(edenModuleCountdownTimer_OnCompleteCode);
-                tooltip = CSTRING(OnCompleteCodeTooltip);
+                tooltip = CSTRING(edenmodulecountdowntimer_oncompletecode_tooltip);
                 typeName = "STRING";
                 defaultValue = "''";
                 control = "editcodemulti5";
