@@ -20,7 +20,9 @@ class CfgPatches
 };
 class RscStandardDisplay;
 class RscPicture;
-class RscButton;
+class RscShortcutButton;
+class RscButtonMenu : RscShortcutButton {};
+class Button : RscButtonMenu {};
 class RscDisplayConfigure
 {
 	enableDisplay=1;
@@ -65,35 +67,64 @@ class RscDisplayMain: RscStandardDisplay
 		class B_Credits
 		{
 		};
-		class ConnectDiscord: RscButton
+		class TisConnectDiscord: Button
 		{
-			idc=-1;
-			text="Discord Kanal Glowny";
-			style=2;
-			url="https://discord.com/channels/1265652940547293254/1265652941251940517";
-			colorBackground[]={0,0,0,0.69999999};
-			colorBackgroundActive[]={1,0,0,0,2};
-			borderSize=0.055;
-			colorBorder[]={0,0,0,0};
-			x="safeZoneX + safeZoneW - 0.7";
-			y="safeZoneY + 0.03 * safeZoneH";
-			w="0.25";
-			h="0.05";
+			idc = -1;
+			text = "Discord Kanal Glowny";
+			url = "https://discord.com/channels/1265652940547293254/1265652941251940517";
+			font = "RobotoCondensed";
+			fontSecondary = "PuristaLight";
+			color[] = {1,1,1,1};
+			color2[] = {0,0,0,1};
+			color2Secondary[] = {0,0,0,1};
+			colorDisabled[] = {1,1,1,0.25};
+			colorDisabledSecondary[] = {1,1,1,0.25};
+			colorSecondary[] = {1,1,1,1};
+			colorFocused[] = {0,0,0,1};
+			colorFocusedSecondary[] = {0,0,0,1};
+			colorBackground[] = {0,0,0,0};
+			colorBackground2[] = {1,1,1,1};
+			colorBackgroundFocused[] = {1, 1, 1, 1};
+			colorText[] = {1,1,1,1};
+			// colorBackgroundActive[] = {1,0,0,0.2};
+			style = "0x02 + 0xC0";
+			size = "1.25 * 	(pixelH * pixelGrid * 2)";
+			sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.75)";
+			sizeExSecondary = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.75)";
+			borderSize = 0.055;
+			x = "0.5 + (5 + 10 + 12) * (pixelW * pixelGrid * 2)";  // = 0.5 + 25U
+			y = "safezoneY + 2 * (pixelH * pixelGrid * 2)";
+			w = "12 * (pixelW * pixelGrid * 2)";
+			h = "2 * (pixelH * pixelGrid * 2)";
 		};
-		class ConnectServer: RscButton
+		class TisConnectServer: RscButtonMenu
 		{
-			idc=-1;
-			text="Dolacz na server TIS";
-			style=2;
-			onbuttonclick="connectToServer ['tispmc.pl', 2302, '132']";
-			colorBackground[]={0,0,0,0.69999999};
-			colorBackgroundActive[]={1,0,0,0,2};
-			borderSize=0.055;
-			colorBorder[]={0,0,0,0};
-			x="safeZoneX + 0.19* safeZoneW";
-			y="safeZoneY + 0.03 * safeZoneH";
-			w="0.24";
-			h="0.05";
+			idc = -1;
+			text = "Dolacz na server TIS";
+			onbuttonclick = "connectToServer ['tispmc.pl', 2302, '132']";
+			font = "RobotoCondensed";
+			fontSecondary = "PuristaLight";
+			color[] = {1,1,1,1};
+			color2[] = {0,0,0,1};
+			color2Secondary[] = {0,0,0,1};
+			colorDisabled[] = {1,1,1,0.25};
+			colorDisabledSecondary[] = {1,1,1,0.25};
+			colorSecondary[] = {1,1,1,1};
+			colorFocused[] = {0,0,0,1};
+			colorFocusedSecondary[] = {0,0,0,1};
+			colorBackground[] = {0,0,0,0};
+			colorBackground2[] = {1,1,1,1};
+			colorBackgroundFocused[] = {1, 1, 1, 1};
+			colorText[] = {1,1,1,1};
+			// colorBackgroundActive[] = {1,0,0,0.2};
+			style = "0x02 + 0xC0";
+			size = "1.25 * 	(pixelH * pixelGrid * 2)";
+			sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.75)";
+			sizeExSecondary = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.75)";
+			x = "0.5 - (5 + 2*10 + 12) * (pixelW * pixelGrid * 2)";  // = 0.5 - 35U
+			y = "safezoneY + 2 * (pixelH * pixelGrid * 2)";
+			w = "12 * (pixelW * pixelGrid * 2)";
+			h = "2 * (pixelH * pixelGrid * 2)";
 		};
 	};
 	class controlsBackground
@@ -103,6 +134,11 @@ class RscDisplayMain: RscStandardDisplay
 			idc=1;
 			access=1;
 			colorText[]={1,1,1,1};
+			colorFocused[] = {0,0,0,1};
+			colorFocusedSecondary[] = {0,0,0,1};
+			colorBackground[] = {0,0,0,0};
+			colorBackground2[] = {1,1,1,1};
+			colorBackgroundFocused[] = {1, 1, 1, 1};
 			x="SafeZoneX";
 			y="SafeZoneY";
 			h="SafeZoneH";
