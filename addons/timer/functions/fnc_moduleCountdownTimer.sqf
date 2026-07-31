@@ -25,13 +25,13 @@ params ["_logic", ["_units", []], ["_activated", true]];
 if (!isServer) exitWith {};
 if (!_activated) exitWith {};
 
-private _duration        = _logic getVariable [QGVAR(edenModuleTimerProperty_Duration), 60];
-private _label         = _logic getVariable [QGVAR(edenModuleTimerProperty_Context), ""];
-private _sideAttr        = _logic getVariable [QGVAR(edenModuleTimerProperty_Side), "ALL"];
-private _includeGroups   = _logic getVariable [QGVAR(edenModuleTimerProperty_IncludeGroups), false];
-private _codeOnStart = compile (_logic getVariable [QEGVAR(main,edenModulePropertyCommon_OnStartCode), {}]);
-private _codeOnUpdate = compile (_logic getVariable [QEGVAR(main,edenModulePropertyCommon_OnProgressCode), {}]);
-private _codeOnEnd = compile (_logic getVariable [QGVAR(edenModulePropertyCommon_OnCompleteCode), {}]);
+private _duration        = _logic getVariable ["Duration", 60];
+private _label         = _logic getVariable ["Context", ""];
+private _targetSide        = _logic getVariable ["TargetSide", "ALL"];
+private _includeGroups   = _logic getVariable ["IncludeGroups", false];
+private _codeOnStart = compile (_logic getVariable ["OnStartFunction", ""]);
+private _codeOnUpdate = compile (_logic getVariable ["OnProgressFunction", ""]);
+private _codeOnEnd = compile (_logic getVariable ["OnCompleteFunction", ""]);
 
 private _timerId          = "TIMER_ID_1";
 if (_timerId == "") then { _timerId = str _logic; }; // auto-generate a stable unique ID from the module object
@@ -49,8 +49,8 @@ private _targets = [];
     };
 } forEach (synchronizedObjects _logic);
 
-if (_sideAttr != "ALL") then {
-    private _side = switch (_sideAttr) do {
+if (_targetSide != "ALL") then {
+    private _side = switch (_targetSide) do {
         case "WEST": { west };
         case "EAST": { east };
         case "INDEPENDENT": { independent };

@@ -36,7 +36,7 @@ GVAR(timerClientHandler) = [{
                 case "gui": {
                     [_timerId, _visible] call FUNC(updateTimerVisibility);
                     if (_visible) then {
-                        [_timerId, _remaining, _label] call FUNC(onTimerUpdateDisplay);
+                        [_timerId, _remaining, _label] call FUNC(updateTimerDisplay);
                     };
                 };
                 default {

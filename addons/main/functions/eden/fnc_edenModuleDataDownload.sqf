@@ -15,10 +15,10 @@ private _speed = _logic getVariable ["Speed", 1.0];
 private _considerCallerDistance = _logic getVariable ["ConsiderCallerDistance", false];
 private _requiredItem = _logic getVariable ["RequiredItem", ""];
 private _displayBuiltInHintMessages = _logic getVariable ["DisplayBuiltInHintMessages", true];
-private _onStartFunction = compile (_logic getVariable ["OnStartFunction", {}]);
-private _onProgressFunction = compile (_logic getVariable ["OnProgressFunction", {}]);
-private _onConnectionLostFunction = compile (_logic getVariable ["OnConnectionLostFunction", {}]);
-private _onCompleteFunction = compile (_logic getVariable ["OnCompleteFunction", {}]);
+private _onStartFunction = compile (_logic getVariable ["OnStartFunction", ""]);
+private _onProgressFunction = compile (_logic getVariable ["OnProgressFunction", ""]);
+private _onConnectionLostFunction = compile (_logic getVariable ["OnConnectionLostFunction", ""]);
+private _onCompleteFunction = compile (_logic getVariable ["OnCompleteFunction", ""]);
 
 private _syncedTriggers = _synchronizedObjects select { _x isKindOf "EmptyDetector" };
 private _connectedObjects = _synchronizedObjects select { not (_x isKindOf "EmptyDetector") };
