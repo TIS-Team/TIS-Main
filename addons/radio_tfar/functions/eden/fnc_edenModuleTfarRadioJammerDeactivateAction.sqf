@@ -16,7 +16,7 @@ private _actionType = _logic getVariable ["ActionType", "SCROLL"]; // SCROLL, HO
 private _actionName = _logic getVariable ["ActionName", "Deactive Jammer"];
 private _actionTime = _logic getVariable ["ActionTime", 4]; // Only valid for HOLD action
 private _shouldCreateAceAction = _logic getVariable ["ShouldCreateAceAction", false]; // TRUE/FALSE
-private _condition = _logic getVariable ["Condition", false];
+private _condition = _logic getVariable ["Condition", "{}"];
 private _hideOnUse = _logic getVariable ["ShouldHideActionAfterUse", false];
 private _onDeactivationCode = compile (_logic getVariable ["OnDeactivationCode", {}]);
 
@@ -24,7 +24,7 @@ private _syncedTriggers = _synchronizedObjects select { _x isKindOf "EmptyDetect
 private _connectedObjects = _synchronizedObjects select { not (_x isKindOf "EmptyDetector") };
 
 private _deactiveJammerActionFunction = {
-	_this call FUNC(tfarRadioJammerDeactivateAction);
+	_this call FUNC(initJammerDeactivateAction);
 };
 
 {

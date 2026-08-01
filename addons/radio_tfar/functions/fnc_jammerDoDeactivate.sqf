@@ -2,7 +2,7 @@
 
 if (!isServer) exitWith {};
 
-params ["_object"];
+params ["_object", "_unit"];
 
 private _jammersMap = GVAR(TfarJammers);
 private _sides = keys _jammersMap;
