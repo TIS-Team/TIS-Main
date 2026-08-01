@@ -21,7 +21,7 @@
         1: NUMBER (Optional)- Jammer working area radius in meters. Default: 1000.
         2: NUMBER (Optional)- Strength of the jammer. Default: 50.
         3: BOOL (Optional)- Debug mode (provides additional info in the console and map). Default: false.
-        4: SIDE (Optional)- Side whose players should be affected by this jammer group. Default: sideUnknown (affects ALL sides, same as legacy behavior).
+        4: SIDE (Optional)- Side whose players should be affected by this jammer group. Default: sideUnknown (all sides).
 
 	Example:
         [[jammer1, jammer2, jammer3]] call tis_main_radio_tfar_fnc_tfarRadioJammer;

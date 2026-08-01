@@ -49,6 +49,35 @@ class GVAR(edenModuleTfarRadioJammers): GVAR(baseEdenModule) {
             typeName = "BOOL";
             defaultValue = "false";
         };
+        class TargetSide: Combo {
+                displayName = CSTRING(edenModuleTfarRadioJammers_TargetSide);
+                tooltip = CSTRING(edenModuleTfarRadioJammers_TargetSide_Tooltip);
+                property = QGVAR(edenModuleTfarRadioJammers_Side);
+                typeName = "STRING";
+                class values {
+                    class All {
+                        name = "All Sides";
+                        value = "sideUnknown";
+                        default = 1;
+                    };
+                    class West {
+                        name = "West";
+                        value = "west";
+                    };
+                    class East {
+                        name = "East";
+                        value = "east";
+                    };
+                    class Independent {
+                        name = "Independent";
+                        value = "independent";
+                    };
+                    class Civilian {
+                        name = "Civilian";
+                        value = "civilian";
+                    };
+                };
+            };
         class ModuleDescription: ModuleDescription {};
     };
     class ModuleDescription: ModuleDescription {
