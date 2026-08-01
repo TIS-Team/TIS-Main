@@ -79,8 +79,11 @@ if (_shouldCreateAceAction) then {
     };
 
     // Create ACE action
-    _jammerParentAction = ["tis_tfar_jammer", "Jammer", "", {}, {true}, {}, []] call ace_interact_menu_fnc_createAction;
-    [_object, 0, ["ACE_MainActions"], _jammerParentAction] call ace_interact_menu_fnc_addActionToObject;
+    if (not ((_object getVariable ["tis_tfar_jammer_parent_action_initialized", false]))) then {
+        _jammerParentAction = ["tis_tfar_jammer", "Jammer", "", {}, {true}, {}, []] call ace_interact_menu_fnc_createAction;
+        [_object, 0, ["ACE_MainActions"], _jammerParentAction] call ace_interact_menu_fnc_addActionToObject;
+        _object setVariable ["tis_tfar_jammer_parent_action_initialized", true];
+    };
 
     _jammerDeactivateAction = ["tis_tfar_jammer", _actionName, "",
     {
