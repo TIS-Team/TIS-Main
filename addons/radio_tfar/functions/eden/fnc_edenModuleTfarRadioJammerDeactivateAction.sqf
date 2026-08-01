@@ -16,9 +16,8 @@ private _actionType = _logic getVariable ["ActionType", "SCROLL"]; // SCROLL, HO
 private _actionName = _logic getVariable ["ActionName", "Deactive Jammer"];
 private _actionTime = _logic getVariable ["ActionTime", 4]; // Only valid for HOLD action
 private _shouldCreateAceAction = _logic getVariable ["ShouldCreateAceAction", false]; // TRUE/FALSE
-private _requiredItem = _logic getVariable ["RequiredItem", ""];
-private _shouldRemoveRequiredItem = _logic getVariable ["ShouldRemoveRequiredItem", false];
-private _hideActionOnSuccess = _logic getVariable ["ShouldHideActionAfterUse", false];
+private _condition = _logic getVariable ["Condition", false];
+private _hideOnUse = _logic getVariable ["ShouldHideActionAfterUse", false];
 private _onDeactivationCode = compile (_logic getVariable ["OnDeactivationCode", {}]);
 
 private _syncedTriggers = _synchronizedObjects select { _x isKindOf "EmptyDetector" };
@@ -35,9 +34,8 @@ private _deactiveJammerActionFunction = {
 		_actionName, 
 		_actionTime, 
 		_shouldCreateAceAction, 
-		_requiredItem,
-		_shouldRemoveRequiredItem,
-		_hideActionOnSuccess,
+		_condition,
+		_hideOnUse,
 		_onDeactivationCode
 	];
 	if (_syncedTriggers isNotEqualTo []) then {

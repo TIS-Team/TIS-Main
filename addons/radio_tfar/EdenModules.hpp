@@ -100,18 +100,14 @@ class GVAR(edenModuleTfarRadioJammersDeactivateAction): GVAR(baseEdenModule) {
             typeName = "BOOL";
             defaultValue = "false";
         };        
-        class RequiredItem: Edit {
-            property = QGVAR(edenModuleTfarRadioJammersDeactivateAction_RequiredItem);
+        class Condition: Default {
+            property = QGVAR(edenModuleTfarRadioJammersDeactivateAction_Condition);
             displayName = ECSTRING(main,RequiredItem);
             typeName = "STRING";
             defaultValue = "''";
+            control = "editcodemulti5";
         };        
-        class ShouldRemoveRequiredItem: Checkbox {
-            property = QGVAR(edenModuleTfarRadioJammersDeactivateAction_ShouldRemoveRequiredItem);
-            displayName = CSTRING(ShouldRemoveRequiredItem);
-            typeName = "BOOL";
-            defaultValue = "false";
-        };        
+     
         class ShouldHideActionAfterUse: Checkbox {
             property = QGVAR(edenModuleTfarRadioJammersDeactivateAction_ShouldHideActionAfterUse);
             displayName = CSTRING(ShouldHideActionAfterUse);
