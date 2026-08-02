@@ -1,5 +1,20 @@
 #include "script_component.hpp"
 
+/*
+	Author: Aquerr (also known as Nerdi)
+	https://github.com/Aquerr
+
+	Description:
+        Script for deactivating TFAR jammer. SERVER ONLY!;
+
+    Parameter(s):
+        0: OBJECT - Jammer object to deactivate
+        1: OBJECT - Unit that deactivated the jammer
+
+	Example:
+		[jammer1, player] call tis_main_radio_tfar_jammerDoDeactivate;
+*/
+
 if (!isServer) exitWith {};
 
 params ["_object", "_unit"];

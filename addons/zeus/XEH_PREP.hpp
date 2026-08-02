@@ -5,6 +5,7 @@ PREP(moduleConvertToBoss);
 PREP(moduleRefillNvgBattery);
 PREP(moduleToggleDiagnosticMonitor);
 PREP(moduleAddAceArsenalAmmoOnly);
+PREP(moduleTfarRadioJammer);
 
 PREP(ui_convertToBoss);
 

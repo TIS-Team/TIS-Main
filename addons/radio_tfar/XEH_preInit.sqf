@@ -2,6 +2,7 @@
 
 ADDON = false;
 
+#include "cba_settings.inc.sqf"
 #include "XEH_PREP.hpp"
 
 ADDON = true;

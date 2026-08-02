@@ -1,4 +1,4 @@
-PREP(tfarRadioJammers);
+PREP(radioJammers);
 PREP(initJammerDeactivateAction);
 PREP(jammerDoDeactivate);
 

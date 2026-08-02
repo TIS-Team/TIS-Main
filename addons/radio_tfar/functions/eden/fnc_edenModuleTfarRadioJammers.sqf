@@ -44,11 +44,11 @@ if (_syncedTriggers isNotEqualTo []) then {
 
 			waitUntil { sleep 1; triggerActivated _trigger };
 
-			_params call FUNC(tfarRadioJammers);
+			_params call FUNC(radioJammers);
 		};
 	} forEach _syncedTriggers;
 } else {
 	// Regular init (no trigger)
 
-	_params call FUNC(tfarRadioJammers);
+	_params call FUNC(radioJammers);
 };
