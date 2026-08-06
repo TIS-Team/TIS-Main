@@ -87,7 +87,7 @@ class GVAR(edenModuleTfarRadioJammers): GVAR(baseEdenModule) {
 
 class GVAR(edenModuleTfarRadioJammersDeactivateAction): GVAR(baseEdenModule) {
     displayName = CSTRING(Module_TfarRadioJammersDeactivateAction_DisplayName);
-    function = QFUNC(edenModuleTfarRadioJammers);
+    function = QFUNC(edenModuleTfarRadioJammerDeactivateAction);
     scope = 2;
     class Attributes: AttributesBase {
         class ActionType: Combo {
@@ -131,7 +131,7 @@ class GVAR(edenModuleTfarRadioJammersDeactivateAction): GVAR(baseEdenModule) {
         };        
         class Condition: Default {
             property = QGVAR(edenModuleTfarRadioJammersDeactivateAction_Condition);
-            displayName = ECSTRING(main,RequiredItem);
+            displayName = ECSTRING(main,Condition);
             typeName = "STRING";
             defaultValue = "''";
             control = "editcodemulti5";
@@ -146,6 +146,7 @@ class GVAR(edenModuleTfarRadioJammersDeactivateAction): GVAR(baseEdenModule) {
         class OnDeactivationCode: Default {
             property = QGVAR(edenModuleTfarRadioJammersDeactivateAction_OnDeactivationCode);
             displayName = CSTRING(OnDeactivationCode);
+            tooltip = CSTRING(OnDeactivationCodeTooltip);
             typeName = "STRING";
             defaultValue = "''";
             control = "editcodemulti5";
@@ -153,6 +154,79 @@ class GVAR(edenModuleTfarRadioJammersDeactivateAction): GVAR(baseEdenModule) {
         class ModuleDescription: ModuleDescription {};
     };
     class ModuleDescription: ModuleDescription {
-        description = CSTRING(Module_TfarRadioJammers_Description);
+        description = CSTRING(Module_TfarRadioJammersDeactivateAction_Description);
+    };
+};
+
+class GVAR(edenModuleTfarRadioJammersActivateAction): GVAR(baseEdenModule) {
+    displayName = CSTRING(Module_TfarRadioJammersActivateAction_DisplayName);
+    function = QFUNC(edenModuleTfarRadioJammerActivateAction);
+    scope = 2;
+    class Attributes: AttributesBase {
+        class ActionType: Combo {
+            displayName = CSTRING(ActionType);
+            tooltip = CSTRING(ActionType);
+            property = QGVAR(edenModuleTfarRadioJammersActivateAction_ActionType);
+            typeName = "STRING";
+            class values {
+                class Scroll {
+                    name = "Scroll";
+                    value = "SCROLL";
+                    default = 1;
+                };
+                class Hold {
+                    name = "Hold";
+                    value = "HOLD";
+                };
+                class None {
+                    name = "None";
+                    value = "NONE";
+                };
+            };
+        };
+        class ActionName: Edit {
+            property = QGVAR(edenModuleTfarRadioJammersActivateAction_ActionName);
+            displayName = CSTRING(ActionName);
+            typeName = "STRING";
+            defaultValue = "''";
+        };
+        class ActionTime: Edit {
+            property = QGVAR(edenModuleTfarRadioJammersActivateAction_ActionTime);
+            displayName = CSTRING(ActionTimeLabel);
+            typeName = "NUMBER";
+            defaultValue = "5";
+        };        
+        class ShouldCreateAceAction: Checkbox {
+            property = QGVAR(edenModuleTfarRadioJammersActivateAction_ShouldCreateAceAction);
+            displayName = CSTRING(ShouldCreateAceActionLabel);
+            typeName = "BOOL";
+            defaultValue = "false";
+        };        
+        class Condition: Default {
+            property = QGVAR(edenModuleTfarRadioJammersActivateAction_Condition);
+            displayName = ECSTRING(main,Condition);
+            typeName = "STRING";
+            defaultValue = "''";
+            control = "editcodemulti5";
+        };        
+     
+        class ShouldHideActionAfterUse: Checkbox {
+            property = QGVAR(edenModuleTfarRadioJammersActivateAction_ShouldHideActionAfterUse);
+            displayName = CSTRING(ShouldHideActionAfterUse);
+            typeName = "BOOL";
+            defaultValue = "false";
+        };        
+        class OnActivationCode: Default {
+            property = QGVAR(edenModuleTfarRadioJammersActivateAction_OnDeactivationCode);
+            displayName = CSTRING(OnActivationCode);
+            tooltip = CSTRING(OnActivationCodeTooltip);
+            typeName = "STRING";
+            defaultValue = "''";
+            control = "editcodemulti5";
+        };
+        class ModuleDescription: ModuleDescription {};
+    };
+    class ModuleDescription: ModuleDescription {
+        description = CSTRING(Module_TfarRadioJammersActivateAction_Description);
     };
 };

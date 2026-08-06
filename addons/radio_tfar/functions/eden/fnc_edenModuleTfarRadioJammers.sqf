@@ -49,6 +49,5 @@ if (_syncedTriggers isNotEqualTo []) then {
 	} forEach _syncedTriggers;
 } else {
 	// Regular init (no trigger)
-
 	_params call FUNC(radioJammers);
 };

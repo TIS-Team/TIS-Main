@@ -60,7 +60,6 @@ private _deactiveJammerActionFunction = {
 		} forEach _syncedTriggers;
 	} else {
 		// Regular init (no trigger)
-
 		_params call _deactiveJammerActionFunction;
 	};
 } forEach _connectedObjects;

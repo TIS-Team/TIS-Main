@@ -6,7 +6,7 @@ params [
     ["_actionName", "Deactivate Jammer", ["string"]], 
     ["_actionTime", 5, [5]], // Only valid for HOLD action
     ["_shouldCreateAceAction", false, [true]], // TRUE/FALSE
-    ["_condition", "{}", ["string"]], 
+    ["_condition", {}, [{}]], 
         // Passed Args (same as BI addAction):
         // _target: Object - The object to which action is attached or, if the object is a unit inside of vehicle, the vehicle
         // _caller: Object - Caller person to whom the action is shown (or not shown if condition returns false)
@@ -38,13 +38,14 @@ switch (_actionType) do {
             {
                 params ["_target", "_caller", "_actionId", "_arguments"];
                 [QGVAR(requestJammerDeactivation), [_target, _caller]] call CBA_fnc_globalEvent;
+                [_target, _caller] call (_arguments select 0);
             },
-            [],
+            [_onDeactivationCode],
             1.5,
             true,
             _hideActionOnUse,
             "",
-            compile _condition
+            _condition //To put as object variable and reference it later so that we have full control over passed parameters.
         ];
     };
     case "HOLD": {
@@ -53,16 +54,17 @@ switch (_actionType) do {
             _actionName,
             "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", 
             "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
-            _condition, 
-            _condition,
+            toString _condition, //To put as object variable and reference it later so that we have full control over passed parameters.
+            toString _condition, //To put as object variable and reference it later so that we have full control over passed parameters.
             {},
             {},
             {
                 params ["_target", "_caller", "_actionId", "_arguments"]; // same as codeStart
                 [QGVAR(requestJammerDeactivation), [_target, _caller]] call CBA_fnc_globalEvent;
+                [_target, _caller] call (_arguments select 0);
             },
             {},
-            [], 
+            [_onDeactivationCode], 
             _actionTime, 
             nil, 
             _hideActionOnUse, 
@@ -87,10 +89,16 @@ if (_shouldCreateAceAction) then {
 
     _jammerDeactivateAction = ["tis_tfar_jammer", _actionName, "",
     {
-        params ["_target", "_player", "_actionParams"];
+        params ["_target", "_player", "_arguments"];
         [QGVAR(requestJammerDeactivation), [_target, _player]] call CBA_fnc_globalEvent;
+        [_target, _player] call (_arguments select 0);
 
-    }, {true}, {}, []] call ace_interact_menu_fnc_createAction;
+    }, {
+        params ["_target", "_player", "_arguments"];
+        private _condition = (_arguments select 1);
+        private _canInvoke = call _condition;
+        _canInvoke;
+    }, {}, [_onDeactivationCode, _condition]] call ace_interact_menu_fnc_createAction;
 
     [_object, 0, ["ACE_MainActions", "tis_tfar_jammer"], _jammerDeactivateAction] call ace_interact_menu_fnc_addActionToObject;
 };

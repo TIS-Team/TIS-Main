@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="TIS-Main">
     <Package name="radio_tfar">
+        <Key ID="str_tis_main_radio_tfar_actionname">
+            <English>Action name</English>
+            <Polish>Nazwa akcji</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_actiontimelabel">
+            <English>Action time</English>
+            <Polish>Czas akcji</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_actiontype">
+            <English>Action type</English>
+            <Polish>Rodzaj akcji</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_edenmoduletfarradiojammers_targetside">
+            <English>Target Side</English>
+            <Polish>Docelowa strona</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_edenmoduletfarradiojammers_targetside_tooltip">
+            <English>Synced jammers will target only the selected side</English>
+            <Polish>Zsynchronizowane zagłuszacze będą działały tylko na wybraną stronę</Polish>
+        </Key>
         <Key ID="str_tis_main_radio_tfar_module_tfarradiojammers_description">
             <English>Converts synced objects to TFAR radio jammers</English>
             <Polish>Konwertuje zsynchronizowane obiekty jako zagłuszacze radia TFAR</Polish>
@@ -8,6 +28,30 @@
         <Key ID="str_tis_main_radio_tfar_module_tfarradiojammers_displayname">
             <English>TFAR radio jammers</English>
             <Polish>TFAR radio zagłuszczacze</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_module_tfarradiojammersdeactivateaction_displayname">
+            <English>TFAR Jammer - Deactivation Action</English>
+            <Polish>TFAR Jammer - Akcja dezaktywacji</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_ondeactivationcode">
+            <English>On Deactivation Code</English>
+            <Polish>Kod po dezaktywacji</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_setting_tfarjammersupdateinterval">
+            <English>TFAR Jammers update interval</English>
+            <Polish>Czas odświeżania zagłuszaczy TFAR</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_shouldcreateaceactionlabel">
+            <English>Create ACE action?</English>
+            <Polish>Utworzyć akcję ACE?</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_shouldhideactionafteruse">
+            <English>Hide action on use?</English>
+            <Polish>Ukryć akcję po użyciu?</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_subcategory_tfar">
+            <English>TFAR</English>
+            <Polish>TFAR</Polish>
         </Key>
         <Key ID="str_tis_main_radio_tfar_tis_anprc_152_broken_radio_description">
             <English>It needs to be repaired to function properly</English>
@@ -24,6 +68,10 @@
         <Key ID="str_tis_main_radio_tfar_tis_anprc_152_discharged_radio_displayname">
             <English>Discharged AN/PRC-152</English>
             <Polish>Rozładowane AN/PRC-152</Polish>
+        </Key>
+        <Key ID="str_tis_main_zeus_jammercreated">
+            <English>Jammer created!</English>
+            <Polish>Utworzono zagłuszacz!</Polish>
         </Key>
     </Package>
 </Project>
