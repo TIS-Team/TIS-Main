@@ -10,16 +10,15 @@ params [
     ["_actionTime", 5, [5]], // Only valid for HOLD action
     ["_shouldCreateAceAction", false, [true]], // TRUE/FALSE
     ["_condition", {}, [{}]], 
-        // Passed Args (same as BI addAction):
-        // _target: Object - The object to which action is attached or, if the object is a unit inside of vehicle, the vehicle
+        // _target: Object - The object to which action is attached
         // _caller: Object - Caller person to whom the action is shown (or not shown if condition returns false)
-        // _actionId: Number - checked action's ID (same as addAction's return value)
-        // _arguments: ARRAY - arguments
 
     ["_hideActionOnUse", false, [true]], 
     ["_onActivationCode", {}, [{}]],
     ["_global", true, [true]]
 ];
+
+if ((isNil "_object") || {isNull(_object)}) exitWith { "[InitJammerActivateAction] Must select and object!" };
 
 // Code for server + future players
 if (isServer && {_global && {isMultiplayer && {isNil {_object getVariable QGVAR(initTfarRadioJammerActivateAction_JIP)}}}}) exitWith {
@@ -33,6 +32,8 @@ if (isServer && {_global && {isMultiplayer && {isNil {_object getVariable QGVAR(
 };
 
 if (!hasInterface) exitWith {};
+
+_object setVariable ["tis_tfar_jammer_activation_condition", _condition];
 
 switch (_actionType) do {
     case "SCROLL": {
@@ -49,7 +50,13 @@ switch (_actionType) do {
             true,
             _hideActionOnUse,
             "",
-            _condition //To put as object variable and reference it later so that we have full control over passed parameters.
+            toString ({
+                params ["_target", "_caller", "_originalTarget"];
+
+                _condition = (_originalTarget getVariable ["tis_tfar_jammer_activation_condition", {}]);
+                private _canAccess = [_originalTarget, _caller] call _condition;
+                _canAccess;
+            })
         ];
     };
     case "HOLD": {
@@ -58,8 +65,20 @@ switch (_actionType) do {
             _actionName,
             "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", 
             "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
-            toString _condition, //To put as object variable and reference it later so that we have full control over passed parameters.
-            toString _condition, //To put as object variable and reference it later so that we have full control over passed parameters.
+            toString ({
+                params ["_target", "_caller"];
+
+                _condition = (_target getVariable ["tis_tfar_jammer_activation_condition", {}]);
+                private _canAccess = [_target, _caller] call _condition;
+                _canAccess;
+            }),
+            toString ({
+                params ["_target", "_caller"];
+
+                _condition = (_target getVariable ["tis_tfar_jammer_activation_condition", {}]);
+                private _canAccess = [_target, _caller] call _condition;
+                _canAccess;
+            }),
             {},
             {},
             {

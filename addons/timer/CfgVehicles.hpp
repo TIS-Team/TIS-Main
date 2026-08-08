@@ -49,6 +49,7 @@ class CfgVehicles {
                 tooltip = CSTRING(edenModuleCountdownTimer_TargetSide_Tooltip);
                 property = QGVAR(edenModuleTimerProperty_Side);
                 typeName = "STRING";
+                defaultValue = "'ALL'";
                 class values {
                     class All {
                         name = "All Sides";

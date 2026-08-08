@@ -13,6 +13,10 @@
             <English>Action name</English>
             <Polish>Nazwa akcji</Polish>
         </Key>
+        <Key ID="str_tis_main_main_condition">
+            <English>Condition</English>
+            <Polish>Warunek</Polish>
+        </Key>
         <Key ID="str_tis_main_main_considercallerdistancelabel">
             <English>Consider downloader distance</English>
             <Polish>Bierz pod uwagę dystans od obiektu</Polish>

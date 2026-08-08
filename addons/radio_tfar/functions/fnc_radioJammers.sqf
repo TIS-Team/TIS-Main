@@ -126,6 +126,7 @@ if (isNil QGVAR(Handle)) then {
             {
                 _sideKeyIter = _x;
                 private _jammersList = GVAR(TfarJammers) get _sideKeyIter;
+                TRACE_1("_jammersList",_jammersList);
                 _jammersList = _jammersList select { alive _x };
                 GVAR(TfarJammers) set [_sideKeyIter, _jammersList];
             } forEach (keys GVAR(TfarJammers));
@@ -136,13 +137,13 @@ if (isNil QGVAR(Handle)) then {
                 _player = _x;
                 private _sideKey = toUpperANSI (str (side _player));
 
-                private _config = GVAR(ConfigBySide) getOrDefault [_sideKey, objNull];
-                if (isNull _config) then {
-                    _config = GVAR(ConfigBySide) getOrDefault [str sideUnknown, objNull];
+                private _config = GVAR(ConfigBySide) getOrDefault [_sideKey, []];
+                if (_config isEqualTo []) then {
+                    _config = GVAR(ConfigBySide) getOrDefault [str sideUnknown, []];
                 };
 
                 // No config at all (neither side-specific nor wildcard) - leave this player alone.
-                if (isNull _config) then { continue; };
+                if (_config isEqualTo []) then { continue; };
 
                 _config params ["_defaultRadius", "_defaultStrength", "_debug", "_configSide", "_configSideKey"];
                 private _jammersList = GVAR(TfarJammers) getOrDefault [_configSideKey, []];
@@ -214,6 +215,11 @@ if (isNil QGVAR(Handle)) then {
                     }] remoteExec ["spawn"];
                 };
             } forEach allPlayers;
+
+            if (count GVAR(TfarJammers) == 0) then {
+                [_handleId] call CBA_fnc_removePerFrameHandler;
+                QGVAR(Handle) = nil;
+            };
         },
         GVAR(TFARJammersUpdateInterval),
         []

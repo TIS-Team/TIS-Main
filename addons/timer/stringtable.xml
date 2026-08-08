@@ -36,7 +36,7 @@ Passed args: [_timerId, _label]</English>
 Przekazane argumenty: [_timerId, _label]</Polish>
         </Key>
         <Key ID="str_tis_main_timer_edenmodulecountdowntimer_onstartcode">
-            <English>On start code</English>
+            <English>On Start code</English>
             <Polish>Kod przy starcie</Polish>
         </Key>
         <Key ID="str_tis_main_timer_edenmodulecountdowntimer_targetside">

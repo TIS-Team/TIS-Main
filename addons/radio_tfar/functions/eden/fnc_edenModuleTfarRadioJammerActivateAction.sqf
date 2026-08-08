@@ -13,33 +13,37 @@ if (!_activated) exitWith {};
 private _synchronizedObjects = synchronizedObjects _logic;
 if (_synchronizedObjects isEqualTo []) exitWith {};
 
+private _jammerRadius = _logic getVariable ["Radius", 1000];
+private _jammerStrength = _logic getVariable ["Strength", 50];
+private _jammerSide = _logic getVariable ["TargetSide", sideUnknown];
 private _actionType = _logic getVariable ["ActionType", "SCROLL"]; // SCROLL, HOLD, NONE
-private _actionName = _logic getVariable ["ActionName", "Deactive Jammer"];
+private _actionName = _logic getVariable ["ActionName", "Activate Jammer"];
 private _actionTime = _logic getVariable ["ActionTime", 4]; // Only valid for HOLD action
 private _shouldCreateAceAction = _logic getVariable ["ShouldCreateAceAction", false]; // TRUE/FALSE
 private _condition = _logic getVariable ["Condition", "{}"];
 private _hideOnUse = _logic getVariable ["ShouldHideActionAfterUse", false];
-private _onDeactivationCode = compile (_logic getVariable ["OnDeactivationCode", "{}"]);
+private _onActivationCode = compile (_logic getVariable ["OnActivationCode", "{}"]);
 
 private _syncedTriggers = _synchronizedObjects select { _x isKindOf "EmptyDetector" };
 private _connectedObjects = _synchronizedObjects select { not (_x isKindOf "EmptyDetector") };
 
-private _deactiveJammerActionFunction = {
-	_this call FUNC(initJammerDeactivateAction);
+private _activateJammerActionFunction = {
+	_this call FUNC(initJammerActivateAction);
 };
 
 {
-	TRACE_1("connected object:",_x);
-	TRACE_1("action type:",_actionType);
 	private _params = [
 		_x, 
+		_jammerRadius,
+		_jammerStrength,
+		_jammerSide,
 		_actionType, 
 		_actionName, 
 		_actionTime, 
 		_shouldCreateAceAction, 
 		_condition,
 		_hideOnUse,
-		_onDeactivationCode
+		_onActivationCode
 	];
 	if (_syncedTriggers isNotEqualTo []) then {
 		{
@@ -48,22 +52,22 @@ private _deactiveJammerActionFunction = {
 			[
 				_trigger,
 				_params,
-				_deactiveJammerActionFunction
+				_activateJammerActionFunction
 			] spawn {
 				params [
 					"_trigger",
 					"_params",
-					"_deactiveJammerActionFunction"
+					"_activateJammerActionFunction"
 				];
 
         		waitUntil { sleep 1; triggerActivated _trigger };
 
-				[_params] call _deactiveJammerActionFunction;
+				[_params] call _activateJammerActionFunction;
 			};
 		} forEach _syncedTriggers;
 	} else {
 		// Regular init (no trigger)
-		[_params] call _deactiveJammerActionFunction;
+		[_params] call _activateJammerActionFunction;
 	};
 } forEach _connectedObjects;
 

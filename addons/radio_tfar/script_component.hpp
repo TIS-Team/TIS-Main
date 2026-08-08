@@ -1,7 +1,7 @@
 #define COMPONENT radio_tfar
 #include "\z\tis_main\addons\main\script_mod.hpp"
 
-// #define DEBUG_ENABLED_TIS_RADIO_TFAR
+#define DEBUG_ENABLED_TIS_RADIO_TFAR
 // #define DISABLE_COMPILE_CACHE
 // #define CBA_DEBUG_SYNCHRONOUS
 // #define ENABLE_PERFORMANCE_COUNTERS

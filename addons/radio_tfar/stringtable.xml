@@ -26,16 +26,44 @@
             <Polish>Konwertuje zsynchronizowane obiekty jako zagłuszacze radia TFAR</Polish>
         </Key>
         <Key ID="str_tis_main_radio_tfar_module_tfarradiojammers_displayname">
-            <English>TFAR radio jammers</English>
-            <Polish>TFAR radio zagłuszczacze</Polish>
+            <English>TFAR - Init radio jammers</English>
+            <Polish>TFAR - Inicjalizacja zagłuszczaczy</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_module_tfarradiojammersactivateaction_description">
+            <English>This module allows to setup a jammer activation action.</English>
+            <Polish>Ten moduł pozwala skonfigurować akcję aktywującą zagłuszacz.</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_module_tfarradiojammersactivateaction_displayname">
+            <English>TFAR Jammer - Activation Action</English>
+            <Polish>TFAR Jammer - Akcja Aktywacji</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_module_tfarradiojammersdeactivateaction_description">
+            <English>This module allows to setup a jammer deactivation action.</English>
+            <Polish>Ten moduł pozwala skonfigurować akcję dezaktywującą zagłuszacz.</Polish>
         </Key>
         <Key ID="str_tis_main_radio_tfar_module_tfarradiojammersdeactivateaction_displayname">
             <English>TFAR Jammer - Deactivation Action</English>
             <Polish>TFAR Jammer - Akcja dezaktywacji</Polish>
         </Key>
+        <Key ID="str_tis_main_radio_tfar_onactivationcode">
+            <English>On Activation Code</English>
+            <Polish>Kod po aktywacji</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_onactivationcodetooltip">
+            <English>Custom script after the activation is done. Executed locally to the interacting player. 
+Passed args: [_object, _unit]</English>
+            <Polish>Script jest uruchomiony lokalnie dla gracza wchodzącego w interakcję. 
+Przekazane argumenty: [_object, _unit]</Polish>
+        </Key>
         <Key ID="str_tis_main_radio_tfar_ondeactivationcode">
             <English>On Deactivation Code</English>
             <Polish>Kod po dezaktywacji</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_ondeactivationcodetooltip">
+            <English>Custom script after the deactivation is done. Script is executed locally to the interacting player. 
+Passed args: [_object, _unit]</English>
+            <Polish>Script jest uruchomiony lokalnie dla gracza wchodzącego w interakcję. 
+Przekazane argumenty: [_object, _unit]</Polish>
         </Key>
         <Key ID="str_tis_main_radio_tfar_setting_tfarjammersupdateinterval">
             <English>TFAR Jammers update interval</English>
@@ -52,6 +80,26 @@
         <Key ID="str_tis_main_radio_tfar_subcategory_tfar">
             <English>TFAR</English>
             <Polish>TFAR</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_tfarjammersupdateintervaltooltip">
+            <English>How often jammers update the interference in 'seconds'?</English>
+            <Polish>Jak często zagłuszacze aktualizują zakłucenia w 'sekundach'?</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_tfarradiojammeractiontime">
+            <English>Actiom time is only valid for HOLD action type</English>
+            <Polish>Czas akcji obowiązuje tylko gdy wybrano typ akcji HOLD</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_tfarradiojammeractivateactionconditiontooltip">
+            <English>Condition code. Executed locally to the interacting player. Must return true/false.
+Passed args: [_object, _unit]</English>
+            <Polish>Kod warunku. Script jest uruchomiony lokalnie dla gracza wchodzącego w interakcję. Musi zwracać true/false. 
+Przekazane argumenty: [_object, _unit]</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_tfarradiojammerdeactivateactionconditiontooltip">
+            <English>Condition code. Executed locally to the interacting player. Must return true/false.
+Passed args: [_object, _unit]</English>
+            <Polish>Kod warunku. Script jest uruchomiony lokalnie dla gracza wchodzącego w interakcję. Musi zwracać true/false. 
+Przekazane argumenty: [_object, _unit]</Polish>
         </Key>
         <Key ID="str_tis_main_radio_tfar_tis_anprc_152_broken_radio_description">
             <English>It needs to be repaired to function properly</English>
