@@ -32,26 +32,26 @@ class GVAR(edenModuleTfarRadioJammers): GVAR(baseEdenModule) {
     class Attributes: AttributesBase {
         class Radius: Edit {
             property = QGVAR(edenModuleTfarRadioJammers_Radius);
-            displayName = ECSTRING(main,RadiusLabel);
-            tooltip = ECSTRING(main,RadiusTooltip);
+            displayName = CSTRING(RadiusLabel);
+            tooltip = CSTRING(RadiusTooltip);
             typeName = "NUMBER";
             defaultValue = "1000";
         };
         class Strength: Edit {
             property = QGVAR(edenModuleTfarRadioJammers_Strength);
-            displayName = ECSTRING(main,StrengthLabel);
+            displayName = CSTRING(StrengthLabel);
             typeName = "NUMBER";
             defaultValue = "50";
         };
         class Debug: Checkbox {
             property = QGVAR(edenModuleTfarRadioJammers_Debug);
-            displayName = ECSTRING(main,DebugLabel);
+            displayName = CSTRING(DebugLabel);
             typeName = "BOOL";
             defaultValue = "false";
         };
         class TargetSide: Combo {
-            displayName = CSTRING(edenModuleTfarRadioJammers_TargetSide);
-            tooltip = CSTRING(edenModuleTfarRadioJammers_TargetSide_Tooltip);
+            displayName = CSTRING(TargetSideLabel);
+            tooltip = CSTRING(TargetSide_Tooltip);
             property = QGVAR(edenModuleTfarRadioJammers_TargetSide);
             typeName = "STRING";
             defaultValue = "'sideUnknown'";
@@ -85,7 +85,7 @@ class GVAR(edenModuleTfarRadioJammers): GVAR(baseEdenModule) {
     };
 };
 
-class GVAR(edenModuleTfarRadioJammersDeactivateAction): GVAR(baseEdenModule) {
+class GVAR(edenModuleTfarRadioJammerDeactivateAction): GVAR(baseEdenModule) {
     displayName = CSTRING(Module_TfarRadioJammersDeactivateAction_DisplayName);
     function = QFUNC(edenModuleTfarRadioJammerDeactivateAction);
     scope = 2;
@@ -159,27 +159,27 @@ class GVAR(edenModuleTfarRadioJammersDeactivateAction): GVAR(baseEdenModule) {
     };
 };
 
-class GVAR(edenModuleTfarRadioJammersActivateAction): GVAR(baseEdenModule) {
+class GVAR(edenModuleTfarRadioJammerActivateAction): GVAR(baseEdenModule) {
     displayName = CSTRING(Module_TfarRadioJammersActivateAction_DisplayName);
     function = QFUNC(edenModuleTfarRadioJammerActivateAction);
     scope = 2;
     class Attributes: AttributesBase {
         class Radius: Edit {
             property = QGVAR(edenModuleTfarRadioJammersActivateAction_Radius);
-            displayName = ECSTRING(main,RadiusLabel);
+            displayName = CSTRING(RadiusLabel);
             typeName = "NUMBER";
             defaultValue = "1000";
         };
         class Strength: Edit {
             property = QGVAR(edenModuleTfarRadioJammersActivateAction_Strength);
-            displayName = ECSTRING(main,StrengthLabel);
+            displayName = CSTRING(StrengthLabel);
             typeName = "NUMBER";
             defaultValue = "50";
         };
         class TargetSide: Combo {
             property = QGVAR(edenModuleTfarRadioJammersActivateAction_TargetSide);
-            displayName = CSTRING(edenModuleTfarRadioJammers_TargetSide);
-            tooltip = CSTRING(edenModuleTfarRadioJammers_TargetSide_Tooltip);
+            displayName = CSTRING(TargetSideLabel);
+            tooltip = CSTRING(TargetSide_Tooltip);
             typeName = "STRING";
             defaultValue = "'sideUnknown'";
             class values {

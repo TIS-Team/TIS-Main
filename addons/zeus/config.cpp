@@ -10,7 +10,8 @@ class CfgPatches
 			QGVAR(moduleConvertToBoss),
 			QGVAR(moduleRefillNvgBattery),
 			QGVAR(moduleToggleDiagnosticMonitor),
-			QGVAR(moduleAddAceArsenalAmmoOnly)
+			QGVAR(moduleAddAceArsenalAmmoOnly),
+			QGVAR(moduleTfarRadioJammer)
 		};
 		weapons[]={};
         requiredVersion = REQUIRED_VERSION;

@@ -13,6 +13,10 @@
             <English>Healthpoints must be a numeric value!</English>
             <Polish>Punkty zdrowia muszą być numerczyną wartością!</Polish>
         </Key>
+        <Key ID="str_tis_main_zeus_jammercreated">
+            <English>Jammer created!</English>
+            <Polish>Utworzono zagłuszacz!</Polish>
+        </Key>
         <Key ID="str_tis_main_zeus_module_addacearsenalammoonly_displayname">
             <English>Add ACE Arsenal Ammo Only</English>
             <Polish>Dodaj ACE Arsenal tylko z amunicją</Polish>
@@ -24,6 +28,10 @@
         <Key ID="str_tis_main_zeus_module_refillnvgbattery_displayname">
             <English>NVG: Refill NVG Battery</English>
             <Polish>NVG: Odnów baterię NVG</Polish>
+        </Key>
+        <Key ID="str_tis_main_zeus_module_tfarradiojammer_displayname">
+            <English>TFAR - Convert to radio jammer</English>
+            <Polish>TFAR - Przekonwertuj na zagłuszacz</Polish>
         </Key>
         <Key ID="str_tis_main_zeus_module_togglediagnosticmonitor_displayname">
             <English>DIAG: Toggle diagnostic monitor</English>

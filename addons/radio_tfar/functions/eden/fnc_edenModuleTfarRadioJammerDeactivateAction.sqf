@@ -58,12 +58,12 @@ private _deactiveJammerActionFunction = {
 
         		waitUntil { sleep 1; triggerActivated _trigger };
 
-				[_params] call _deactiveJammerActionFunction;
+				_params call _deactiveJammerActionFunction;
 			};
 		} forEach _syncedTriggers;
 	} else {
 		// Regular init (no trigger)
-		[_params] call _deactiveJammerActionFunction;
+		_params call _deactiveJammerActionFunction;
 	};
 } forEach _connectedObjects;
 

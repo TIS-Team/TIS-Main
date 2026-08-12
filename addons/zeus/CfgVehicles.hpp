@@ -46,4 +46,12 @@ class CfgVehicles {
         function = QFUNC(moduleAddAceArsenalAmmoOnly);
         icon = "a3\ui_f\data\gui\rsc\rscdisplayarcademap\icon_config_ca.paa";
     };
+
+    class GVAR(moduleTfarRadioJammer): GVAR(baseModule) {
+        category = QGVAR(TIS_TFAR);
+        curatorCanAttach = 1;
+        displayName = CSTRING(Module_TfarRadioJammer_DisplayName);
+        curatorInfoType = QGVAR(RscTfarRadioJammer);
+        icon = "a3\ui_f\data\gui\rsc\rscdisplayarcademap\icon_config_ca.paa";
+    };
 };

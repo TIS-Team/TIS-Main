@@ -45,9 +45,6 @@
             <English>Data download started!</English>
             <Polish>Pobieranie danych rozpoczęte!</Polish>
         </Key>
-        <Key ID="str_tis_main_main_debuglabel">
-            <English>Debug</English>
-        </Key>
         <Key ID="str_tis_main_main_displaybuiltinhintmessageslabel">
             <English>Display bulit-in hint messages</English>
             <Polish>Pokazuj wbudowane komunikaty HINT</Polish>
@@ -116,14 +113,6 @@ Passed args: [_caller, _device]</English>
             <Polish>Skrypt wykonany jest po stronie serwera.
 Przekazane argumenty: [_caller, _device]</Polish>
         </Key>
-        <Key ID="str_tis_main_main_radiuslabel">
-            <English>Radius</English>
-            <Polish>Promień</Polish>
-        </Key>
-        <Key ID="str_tis_main_main_radiustooltip">
-            <English>Radius is calculated in meters</English>
-            <Polish>Promień jest wyliczany w metrach</Polish>
-        </Key>
         <Key ID="str_tis_main_main_requireditem">
             <English>Required item</English>
             <Polish>Wymagany przedmiot</Polish>
@@ -139,10 +128,6 @@ Przekazane argumenty: [_caller, _device]</Polish>
         <Key ID="str_tis_main_main_showbossbarlabel">
             <English>Show boss bar</English>
             <Polish>Pokaż boss bar</Polish>
-        </Key>
-        <Key ID="str_tis_main_main_strengthlabel">
-            <English>Strength</English>
-            <Polish>Moc</Polish>
         </Key>
         <Key ID="str_tis_main_main_tisteam">
             <English>TIS-Team</English>

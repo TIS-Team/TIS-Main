@@ -22,4 +22,10 @@ class CfgFactionClasses {
         priority = 2;
         side = 7;
     };
+
+    class GVAR(TIS_TFAR) {
+        displayName = "TIS TFAR";
+        priority = 2;
+        side = 7;
+    };
 };

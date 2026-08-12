@@ -4,6 +4,7 @@ class RscControlsGroup;
 class RscControlsGroupNoScrollbars;
 class RscText;
 class RscEdit;
+class RscCombo;
 class ctrlToolbox;
 
 class RscDisplayAttributes {
@@ -142,11 +143,12 @@ class GVAR(RscTfarRadioJammer): RscDisplayAttributes {
                     x = 0;
                     y = 0;
                     w = QUOTE(W_PART(26));
-                    h = QUOTE(H_PART(5.5));
+                    h = QUOTE(H_PART(4.4));
                     class controls {
                         class RadiusLabel: RscText {
                             idc = -1;
-                            text = ECSTRING(main,NameLabel);
+                            text = ECSTRING(radio_tfar,Radiuslabel);
+                            tooltip = "Testing";
                             x = 0;
                             y = 0;
                             w = QUOTE(W_PART(10));
@@ -162,7 +164,7 @@ class GVAR(RscTfarRadioJammer): RscDisplayAttributes {
                         };
                         class StrengthLabel: RscText {
                             idc = -1;
-                            text = ECSTRING(main,HPLabel);
+                            text = ECSTRING(radio_tfar,StrengthLabel);
                             x = 0;
                             y = QUOTE(H_PART(1.1));
                             w = QUOTE(W_PART(10));
@@ -178,26 +180,45 @@ class GVAR(RscTfarRadioJammer): RscDisplayAttributes {
                         };
                         class TargetSideLabel: RscText {
                             idc = -1;
-                            text = ECSTRING(main,ShowBossBarLabel);
+                            text = ECSTRING(radio_tfar,TargetSideLabel);
                             x = 0;
                             y = QUOTE(H_PART(2.2));
                             w = QUOTE(W_PART(10));
                             h = QUOTE(H_PART(1));
                             colorBackground[] = {0, 0, 0, 0.5};
                         };
-                        class TargetSideCombo: ctrlToolbox {
+                        class TargetSideCombo: RscCombo {
                             idc = ZEUS_CONVERTTOBOSS_DIALOG_SHOW_HEALTHBAR_TOGGLE_ID;
                             x = QUOTE(W_PART(10.1));
                             y = QUOTE(H_PART(2.2));
                             w = QUOTE(W_PART(15.9));
                             h = QUOTE(H_PART(1));
-                            rows = 1;
-                            columns = 2;
-                            strings[] = {ECSTRING(common,No), ECSTRING(common,Yes)};
+                            class Items {
+                                class All {
+                                    text = "All Sides";
+                                    data = "sideUnknown";
+                                };
+                                class West {
+                                    name = "West";
+                                    data = "west";
+                                };
+                                class East {
+                                    name = "East";
+                                    data = "east";
+                                };
+                                class Independent {
+                                    name = "Independent";
+                                    data = "independent";
+                                };
+                                class Civilian {
+                                    name = "Civilian";
+                                    data = "civilian";
+                                };
+                            };
                         };
                         class DebugLabel: RscText {
                             idc = -1;
-                            text = ECSTRING(main,ShouldMakeMeleeInvincibleLabel);
+                            text = ECSTRING(radio_tfar,DebugLabel);
                             x = 0;
                             y = QUOTE(H_PART(3.3));
                             w = QUOTE(W_PART(10));

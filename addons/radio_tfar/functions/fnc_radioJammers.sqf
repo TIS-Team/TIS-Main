@@ -216,13 +216,12 @@ if (isNil QGVAR(Handle)) then {
                 };
             } forEach allPlayers;
 
-            if (count GVAR(TfarJammers) == 0) then {
+            if ((count GVAR(TfarJammers)) == 0) then {
                 [_handleId] call CBA_fnc_removePerFrameHandler;
-                QGVAR(Handle) = nil;
+                GVAR(Handle) = nil;
             };
         },
         GVAR(TFARJammersUpdateInterval),
         []
     ] call CBA_fnc_addPerFrameHandler;
-
 };

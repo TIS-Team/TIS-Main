@@ -60,7 +60,7 @@ private _fnc_onConfirm = {
 	private _radius = parseNumber (ctrlText (_display displayCtrl ZEUS_TFAR_RADIO_JAMMER_DIALOG_RADIUS_EDIT_ID));
 	private _strength = parseNumber (ctrlText (_display displayCtrl ZEUS_TFAR_RADIO_JAMMER_DIALOG_STRENGTH_EDIT_ID));
     private _sideIndex = lbCurSel (_display displayCtrl ZEUS_TFAR_RADIO_JAMMER_DIALOG_SIDE_COMBO_ID);
-    private _side = (_display displayCtrl ZEUS_TFAR_RADIO_JAMMER_DIALOG_SIDE_COMBO_ID) lbText _sideIndex;
+    private _side = (_display displayCtrl ZEUS_TFAR_RADIO_JAMMER_DIALOG_SIDE_COMBO_ID) lbData _sideIndex;
     private _debug = (lbCurSel (_display displayCtrl ZEUS_TFAR_RADIO_JAMMER_DIALOG_DEBUG_EDIT_ID)) > 0;
 
     [attachedTo _logic, _radius, _strength, _debug, _side] call FUNC(moduleTfarRadioJammer);

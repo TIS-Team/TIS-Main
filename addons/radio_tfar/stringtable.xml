@@ -13,13 +13,8 @@
             <English>Action type</English>
             <Polish>Rodzaj akcji</Polish>
         </Key>
-        <Key ID="str_tis_main_radio_tfar_edenmoduletfarradiojammers_targetside">
-            <English>Target Side</English>
-            <Polish>Docelowa strona</Polish>
-        </Key>
-        <Key ID="str_tis_main_radio_tfar_edenmoduletfarradiojammers_targetside_tooltip">
-            <English>Synced jammers will target only the selected side</English>
-            <Polish>Zsynchronizowane zagłuszacze będą działały tylko na wybraną stronę</Polish>
+        <Key ID="str_tis_main_radio_tfar_debuglabel">
+            <English>Debug</English>
         </Key>
         <Key ID="str_tis_main_radio_tfar_module_tfarradiojammers_description">
             <English>Converts synced objects to TFAR radio jammers</English>
@@ -65,6 +60,14 @@ Passed args: [_object, _unit]</English>
             <Polish>Script jest uruchomiony lokalnie dla gracza wchodzącego w interakcję. 
 Przekazane argumenty: [_object, _unit]</Polish>
         </Key>
+        <Key ID="str_tis_main_radio_tfar_radiuslabel">
+            <English>Radius</English>
+            <Polish>Promień</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_radiustooltip">
+            <English>Radius is calculated in meters</English>
+            <Polish>Promień jest wyliczany w metrach</Polish>
+        </Key>
         <Key ID="str_tis_main_radio_tfar_setting_tfarjammersupdateinterval">
             <English>TFAR Jammers update interval</English>
             <Polish>Czas odświeżania zagłuszaczy TFAR</Polish>
@@ -77,9 +80,21 @@ Przekazane argumenty: [_object, _unit]</Polish>
             <English>Hide action on use?</English>
             <Polish>Ukryć akcję po użyciu?</Polish>
         </Key>
+        <Key ID="str_tis_main_radio_tfar_strengthlabel">
+            <English>Strength</English>
+            <Polish>Moc</Polish>
+        </Key>
         <Key ID="str_tis_main_radio_tfar_subcategory_tfar">
             <English>TFAR</English>
             <Polish>TFAR</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_targetside_tooltip">
+            <English>Synced jammers will target only the selected side</English>
+            <Polish>Zsynchronizowane zagłuszacze będą działały tylko na wybraną stronę</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_targetsidelabel">
+            <English>Target Side</English>
+            <Polish>Docelowa strona</Polish>
         </Key>
         <Key ID="str_tis_main_radio_tfar_tfarjammersupdateintervaltooltip">
             <English>How often jammers update the interference in 'seconds'?</English>
@@ -116,10 +131,6 @@ Przekazane argumenty: [_object, _unit]</Polish>
         <Key ID="str_tis_main_radio_tfar_tis_anprc_152_discharged_radio_displayname">
             <English>Discharged AN/PRC-152</English>
             <Polish>Rozładowane AN/PRC-152</Polish>
-        </Key>
-        <Key ID="str_tis_main_zeus_jammercreated">
-            <English>Jammer created!</English>
-            <Polish>Utworzono zagłuszacz!</Polish>
         </Key>
     </Package>
 </Project>

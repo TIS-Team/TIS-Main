@@ -62,12 +62,12 @@ private _activateJammerActionFunction = {
 
         		waitUntil { sleep 1; triggerActivated _trigger };
 
-				[_params] call _activateJammerActionFunction;
+				_params call _activateJammerActionFunction;
 			};
 		} forEach _syncedTriggers;
 	} else {
 		// Regular init (no trigger)
-		[_params] call _activateJammerActionFunction;
+		_params call _activateJammerActionFunction;
 	};
 } forEach _connectedObjects;
 
