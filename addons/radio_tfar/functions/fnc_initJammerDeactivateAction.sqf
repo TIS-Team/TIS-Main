@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 params [
-    ["_object"],
+    "_object",
     ["_actionType", "SCROLL", ['string']], // SCROLL, HOLD, NONE
     ["_actionName", "Deactivate Jammer", ["string"]], 
     ["_actionTime", 5, [5]], // Only valid for HOLD action

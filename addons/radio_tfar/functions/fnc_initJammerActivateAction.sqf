@@ -1,7 +1,9 @@
 #include "script_component.hpp"
 
+TRACE_1("_this",_this);
+
 params [
-    ["_object"],
+    "_object",
     ["_jammerRadius", 1000, [0]],
     ["_jammerStrength", 50, [0]],
     ["_jammerSide", sideUnknown, [sideUnknown]],
