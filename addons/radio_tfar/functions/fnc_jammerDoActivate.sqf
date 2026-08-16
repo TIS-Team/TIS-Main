@@ -17,21 +17,26 @@
 
 if (!isServer) exitWith {};
 
-params ["_object", "_unit", "_radius", "_strength", "_side"];
+params ["_object", "_unit", "_radius", "_strength", ["_side", sideUnknown, [west, east, resistance, civilian, sideUnknown]]];
 
 // Check if a handler is already running for this specific side. 
 // If no, run regular radioJammers initialization.
 // If yes, add jammer to given side. 
-private _sideKey = (toUpperANSI (str _side));
-private _existingJammers = GVAR(TfarJammers) getOrDefault [_sideKey, []];
+
+private _existingJammers = [_side] call FUNC(getJammersForSide);
 if (_existingJammers isEqualTo []) then {
 	// Regular init
-	[[_object], _radius, _strength, false, _sideKey] call FUNC(radioJammers);
+	[[_object], _radius, _strength, false, _side] call FUNC(radioJammers);
 } else {
 	// Add jammer to existing jammers
 	private _jammersMap = GVAR(TfarJammers);
-	private _sideJammers = _jammersMap get _side;
 	_object setVariable ["tis_tfar_jammer_radius", _radius];
 	_object setVariable ["tis_tfar_jammer_strength", _strength];
-	_sideJammers pushBack _object;
+
+	private _index = _existingJammers findIf { _x isEqualTo _object };
+	if (_index == -1) then { // Add jammer only if not already added
+		_existingJammers pushBack _object;
+		private _sideKey = (toUpperANSI (str _side));
+		GVAR(TfarJammers) set [_sideKey, _existingJammers];
+	};
 };

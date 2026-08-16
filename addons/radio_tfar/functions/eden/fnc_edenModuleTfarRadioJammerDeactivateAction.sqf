@@ -13,11 +13,14 @@ if (!_activated) exitWith {};
 private _synchronizedObjects = synchronizedObjects _logic;
 if (_synchronizedObjects isEqualTo []) exitWith {};
 
+private _jammerVariableString = _logic getVariable ["JammerVariable", ""];
+private _targetJammer = missionNamespace getVariable [_jammerVariableString, objNull];
+
 private _actionType = _logic getVariable ["ActionType", "SCROLL"]; // SCROLL, HOLD, NONE
 private _actionName = _logic getVariable ["ActionName", "Deactive Jammer"];
 private _actionTime = _logic getVariable ["ActionTime", 4]; // Only valid for HOLD action
 private _shouldCreateAceAction = _logic getVariable ["ShouldCreateAceAction", false]; // TRUE/FALSE
-private _condition = _logic getVariable ["Condition", "{}"];
+private _condition = compile (_logic getVariable ["Condition", "{true}"]);
 private _hideOnUse = _logic getVariable ["ShouldHideActionAfterUse", false];
 private _onDeactivationCode = compile (_logic getVariable ["OnDeactivationCode", "{}"]);
 
@@ -29,10 +32,9 @@ private _deactiveJammerActionFunction = {
 };
 
 {
-	TRACE_1("connected object:",_x);
-	TRACE_1("action type:",_actionType);
 	private _params = [
 		_x, 
+		_targetJammer,
 		_actionType, 
 		_actionName, 
 		_actionTime, 

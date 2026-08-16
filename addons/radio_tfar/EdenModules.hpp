@@ -90,12 +90,19 @@ class GVAR(edenModuleTfarRadioJammerDeactivateAction): GVAR(baseEdenModule) {
     function = QFUNC(edenModuleTfarRadioJammerDeactivateAction);
     scope = 2;
     class Attributes: AttributesBase {
+        class JammerVariable: Edit {
+            property = QGVAR(edenModuleTfarRadioJammersDeactivateAction_JammerVariable);
+            displayName = CSTRING(JammerVariable);
+            tooltip = CSTRING(JammerVariable_Tooltip);
+            typeName = "STRING";
+            defaultValue = "''";
+        };
         class ActionType: Combo {
             displayName = CSTRING(ActionType);
             tooltip = CSTRING(ActionType);
             property = QGVAR(edenModuleTfarRadioJammersDeactivateAction_ActionType);
             typeName = "STRING";
-            defaultValue = "SCROLL";
+            defaultValue = "'SCROLL'";
             class values {
                 class Scroll {
                     name = "Scroll";
@@ -164,6 +171,13 @@ class GVAR(edenModuleTfarRadioJammerActivateAction): GVAR(baseEdenModule) {
     function = QFUNC(edenModuleTfarRadioJammerActivateAction);
     scope = 2;
     class Attributes: AttributesBase {
+        class JammerVariable: Edit {
+            property = QGVAR(edenModuleTfarRadioJammersActivateAction_JammerVariable);
+            displayName = CSTRING(JammerVariable);
+            tooltip = CSTRING(JammerVariable_Tooltip);
+            typeName = "STRING";
+            defaultValue = "''";
+        };
         class Radius: Edit {
             property = QGVAR(edenModuleTfarRadioJammersActivateAction_Radius);
             displayName = CSTRING(RadiusLabel);
@@ -210,7 +224,7 @@ class GVAR(edenModuleTfarRadioJammerActivateAction): GVAR(baseEdenModule) {
             tooltip = CSTRING(ActionType);
             property = QGVAR(edenModuleTfarRadioJammersActivateAction_ActionType);
             typeName = "STRING";
-            defaultValue = "SCROLL";
+            defaultValue = "'SCROLL'";
             class values {
                 class Scroll {
                     name = "Scroll";

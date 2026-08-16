@@ -17,10 +17,8 @@ private _radius = _logic getVariable ["Radius", 1000];
 private _strength = _logic getVariable ["Strength", 50];
 private _debug = _logic getVariable ["Debug", false];
 private _sideString = _logic getVariable ["TargetSide", "sideUnknown"];
-TRACE_1("_sideString",_sideString);
 
 private _side = [_sideString] call EFUNC(main,sideFromStringResolver);
-TRACE_1("_side",_side);
 
 private _syncedTriggers = _synchronizedObjects select { _x isKindOf "EmptyDetector" };
 private _connectedObjects = _synchronizedObjects select { not (_x isKindOf "EmptyDetector") };
@@ -33,8 +31,6 @@ private _params = [
 	_side
 ];
 if (_connectedObjects isEqualTo []) exitWith {};
-
-TRACE_1("_connectedObjects",_connectedObjects);
 
 if (_syncedTriggers isNotEqualTo []) then {
 	{

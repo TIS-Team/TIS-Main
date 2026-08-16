@@ -3,6 +3,7 @@ PREP(initJammerDeactivateAction);
 PREP(initJammerActivateAction);
 PREP(jammerDoDeactivate);
 PREP(jammerDoActivate);
+PREP(getJammersForSide);
 
 // Eden
 PREP_BY_PATH(edenModuleTfarRadioJammers,functions\eden\fnc_edenModuleTfarRadioJammers.sqf);

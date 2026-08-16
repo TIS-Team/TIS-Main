@@ -5,13 +5,11 @@ params ["_control"];
 private _display = ctrlParent _control;
 private _ctrlButtonOK = _display displayCtrl 1; // IDC_OK
 private _logic = GETMVAR(BIS_fnc_initCuratorAttributes_target,objNull);
-TRACE_1("Logic Object",_logic);
 
 _control ctrlRemoveAllEventHandlers "SetFocus";
 
 // Validate module target
 private _unit = attachedTo _logic;
-TRACE_1("unit",_unit);
 
 scopeName "Main";
 

@@ -1,17 +1,16 @@
 #include "script_component.hpp"
 
-TRACE_1("_this",_this);
-
 params [
-    "_object",
+    "_actionObject",
+    ["_targetJammer", objNull, [objNull]],
     ["_jammerRadius", 1000, [0]],
     ["_jammerStrength", 50, [0]],
-    ["_jammerSide", sideUnknown, [sideUnknown]],
+    ["_jammerSide", sideUnknown, [west, east, resistance, civilian, sideUnknown]],
     ["_actionType", "SCROLL", ['string']], // SCROLL, HOLD, NONE
     ["_actionName", "Activate Jammer", ["string"]], 
     ["_actionTime", 5, [5]], // Only valid for HOLD action
     ["_shouldCreateAceAction", false, [true]], // TRUE/FALSE
-    ["_condition", {}, [{}]], 
+    ["_condition", {}, [{true}]], 
         // _target: Object - The object to which action is attached
         // _caller: Object - Caller person to whom the action is shown (or not shown if condition returns false)
 
@@ -20,77 +19,76 @@ params [
     ["_global", true, [true]]
 ];
 
-if ((isNil "_object") || {isNull(_object)}) exitWith { "[InitJammerActivateAction] Must select and object!" };
+if ((isNil "_actionObject") || {isNull(_actionObject)}) exitWith { "[InitJammerActivateAction] Must select and object!" };
+
+// If targetJammer is null then set action object as target jammer
+if (isNull _targetJammer) then {
+    _targetJammer = _actionObject;
+};
 
 // Code for server + future players
-if (isServer && {_global && {isMultiplayer && {isNil {_object getVariable QGVAR(initTfarRadioJammerActivateAction_JIP)}}}}) exitWith {
+if (isServer && {_global && {isMultiplayer && {isNil {_actionObject getVariable QGVAR(initTfarRadioJammerActivateAction_JIP)}}}}) exitWith {
 
-    private _id = [QGVAR(initTfarRadioJammerActivateActionEvent), [_object, _jammerRadius, _jammerStrength, _jammerSide, _actionType, _actionName, _actionTime, _shouldCreateAceAction, _condition, _hideActionOnUse, _onActivationCode, false]] call CBA_fnc_globalEventJIP;
+    private _id = [QGVAR(initTfarRadioJammerActivateActionEvent), [_actionObject, _targetJammer, _jammerRadius, _jammerStrength, _jammerSide, _actionType, _actionName, _actionTime, _shouldCreateAceAction, _condition, _hideActionOnUse, _onActivationCode, false]] call CBA_fnc_globalEventJIP;
 
     // Remove JIP EH if object is deleted
-    [_id, _object] call CBA_fnc_removeGlobalEventJIP;
+    [_id, _actionObject] call CBA_fnc_removeGlobalEventJIP;
 
-    _object setVariable [QGVAR(initTfarRadioJammerActivateAction_JIP), _id, true];
+    _actionObject setVariable [QGVAR(initTfarRadioJammerActivateAction_JIP), _id, true];
 };
 
 if (!hasInterface) exitWith {};
 
-_object setVariable ["tis_tfar_jammer_activation_condition", _condition];
+_actionObject setVariable ["tis_tfar_jammer_activation_condition", _condition];
+_actionObject setVariable ["tis_tfar_jammer_target", _targetJammer];
 
 switch (_actionType) do {
     case "SCROLL": {
-        _object addAction [
+        _actionObject addAction [
             _actionName,
             {
                 params ["_target", "_caller", "_actionId", "_arguments"];
-                _arguments params ["_radius", "_strength", "_side", "_onActivationCode"];
-                [QGVAR(requestJammerActivation), [_target, _caller, _radius, _strength, _side]] call CBA_fnc_globalEvent;
-                [_target, _caller] call _onActivationCode;
+                _arguments params ["_radius", "_strength", "_side", "_onActivationCode", "_targetJammer"];
+                [QGVAR(requestJammerActivation), [_targetJammer, _caller, _radius, _strength, _side]] call CBA_fnc_globalEvent;
+                [_targetJammer, _caller] call _onActivationCode;
             },
-            [_jammerRadius, _jammerStrength, _jammerSide, _onActivationCode],
+            [_jammerRadius, _jammerStrength, _jammerSide, _onActivationCode, _targetJammer],
             1.5,
             true,
             _hideActionOnUse,
             "",
             toString ({
-                params ["_target", "_caller", "_originalTarget"];
+                params ['_target', '_caller', '_originalTarget'];
 
-                _condition = (_originalTarget getVariable ["tis_tfar_jammer_activation_condition", {}]);
-                private _canAccess = [_originalTarget, _caller] call _condition;
+                private _condition = (_originalTarget getVariable ['tis_tfar_jammer_activation_condition', {true}]);
+                private _targetJammer = (_originalTarget getVariable ["tis_tfar_jammer_target", objNull]);
+                private _canAccess = [_targetJammer, _caller] call _condition;
                 _canAccess;
             })
         ];
     };
     case "HOLD": {
         [
-            _object,
+            _actionObject,
             _actionName,
             "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", 
             "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
-            toString ({
-                params ["_target", "_caller"];
-
-                _condition = (_target getVariable ["tis_tfar_jammer_activation_condition", {}]);
-                private _canAccess = [_target, _caller] call _condition;
-                _canAccess;
-            }),
-            toString ({
-                params ["_target", "_caller"];
-
-                _condition = (_target getVariable ["tis_tfar_jammer_activation_condition", {}]);
-                private _canAccess = [_target, _caller] call _condition;
-                _canAccess;
-            }),
+            toString {
+                [(_target getVariable ["tis_tfar_jammer_target", objNull]), _this] call (_target getVariable ["tis_tfar_jammer_activation_condition", {true}]);
+            },
+            toString {
+                [(_target getVariable ["tis_tfar_jammer_target", objNull]), _this] call (_target getVariable ["tis_tfar_jammer_activation_condition", {true}])
+            },
             {},
             {},
             {
-                params ["_target", "_caller", "_actionId", "_arguments"]; // same as codeStart
-                _arguments params ["_radius", "_strength", "_side", "_onActivationCode"];
-                [QGVAR(requestJammerActivation), [_target, _caller, _radius, _strength, _side]] call CBA_fnc_globalEvent;
-                [_target, _caller] call _onActivationCode;
+                params ["_target", "_caller", "_actionId", "_arguments"];
+                _arguments params ["_radius", "_strength", "_side", "_onActivationCode", "_targetJammer"];
+                [QGVAR(requestJammerActivation), [_targetJammer, _caller, _radius, _strength, _side]] call CBA_fnc_globalEvent;
+                [_targetJammer, _caller] call _onActivationCode;
             },
             {},
-            [_jammerRadius, _jammerStrength, _jammerSide, _onActivationCode], 
+            [_jammerRadius, _jammerStrength, _jammerSide, _onActivationCode, _targetJammer], 
             _actionTime, 
             nil, 
             _hideActionOnUse, 
@@ -107,24 +105,24 @@ if (_shouldCreateAceAction) then {
     };
 
     // Create ACE action
-    if (not ((_object getVariable ["tis_tfar_jammer_parent_action_initialized", false]))) then {
+    if (not ((_actionObject getVariable ["tis_tfar_jammer_parent_action_initialized", false]))) then {
         _jammerParentAction = ["tis_tfar_jammer", "Jammer", "", {}, {true}, {}, []] call ace_interact_menu_fnc_createAction;
-        [_object, 0, ["ACE_MainActions"], _jammerParentAction] call ace_interact_menu_fnc_addActionToObject;
-        _object setVariable ["tis_tfar_jammer_parent_action_initialized", true];
+        [_actionObject, 0, ["ACE_MainActions"], _jammerParentAction] call ace_interact_menu_fnc_addActionToObject;
+        _actionObject setVariable ["tis_tfar_jammer_parent_action_initialized", true];
     };
 
     _jammerActivateAction = ["tis_tfar_jammer", _actionName, "",
     {
         params ["_target", "_player", "_actionParams"];
-        _actionParams params ["_radius", "_strength", "_side", "_onActivationCode"];
-        [QGVAR(requestJammerActivation), [_target, _player, _radius, _strength, _side]] call CBA_fnc_globalEvent;
-        [_target, _player] call _onActivationCode;
+        _actionParams params ["_radius", "_strength", "_side", "_onActivationCode", "_condition", "_targetJammer"];
+        [QGVAR(requestJammerActivation), [_targetJammer, _player, _radius, _strength, _side]] call CBA_fnc_globalEvent;
+        [_targetJammer, _player] call _onActivationCode;
     }, {
-        params ["_target", "_player", "_arguments"];
-        private _condition = (_arguments select 4);
-        private _canInvoke = call _condition;
+        params ["_target", "_player", "_actionParams"];
+        _actionParams params ["_radius", "_strength", "_side", "_onActivationCode", "_condition", "_targetJammer"];
+        private _canInvoke = [_targetJammer, _player] call _condition;
         _canInvoke;
-    }, {}, [_jammerRadius, _jammerStrength, _jammerSide, _onActivationCode, _condition]] call ace_interact_menu_fnc_createAction;
+    }, {}, [_jammerRadius, _jammerStrength, _jammerSide, _onActivationCode, _condition, _targetJammer]] call ace_interact_menu_fnc_createAction;
 
-    [_object, 0, ["ACE_MainActions", "tis_tfar_jammer"], _jammerActivateAction] call ace_interact_menu_fnc_addActionToObject;
+    [_actionObject, 0, ["ACE_MainActions", "tis_tfar_jammer"], _jammerActivateAction] call ace_interact_menu_fnc_addActionToObject;
 };

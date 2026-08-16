@@ -16,9 +16,17 @@
         <Key ID="str_tis_main_radio_tfar_debuglabel">
             <English>Debug</English>
         </Key>
+        <Key ID="str_tis_main_radio_tfar_jammervariable">
+            <English>Jammer variable</English>
+            <Polish>Zmienna zagłuszacza</Polish>
+        </Key>
+        <Key ID="str_tis_main_radio_tfar_jammervariable_tooltip">
+            <English>Instead of converting the synced objects with module to jammers, an object variable can be entered here that should be converted to a jammer.</English>
+            <Polish>Zamiast konwertować zsynchronizowane obiekty z modułem na zagłuszacze, można wprowadzić tutaj zmienną obiektu, który ma zostać przekonwertowany w zagłuszacz.</Polish>
+        </Key>
         <Key ID="str_tis_main_radio_tfar_module_tfarradiojammers_description">
-            <English>Converts synced objects to TFAR radio jammers</English>
-            <Polish>Konwertuje zsynchronizowane obiekty jako zagłuszacze radia TFAR</Polish>
+            <English>Converts synced objects to TFAR radio jammers. Alternatively, a jammer object variable can be referenced that will be converted to jammer.</English>
+            <Polish>Konwertuje zsynchronizowane obiekty jako zagłuszacze radia TFAR. Alternatywne, zmienna zagłuszacza może być przekazana aby przekonwertować obiekt w zagłuszacz.</Polish>
         </Key>
         <Key ID="str_tis_main_radio_tfar_module_tfarradiojammers_displayname">
             <English>TFAR - Init radio jammers</English>

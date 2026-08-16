@@ -126,7 +126,6 @@ if (isNil QGVAR(Handle)) then {
             {
                 _sideKeyIter = _x;
                 private _jammersList = GVAR(TfarJammers) get _sideKeyIter;
-                TRACE_1("_jammersList",_jammersList);
                 _jammersList = _jammersList select { alive _x };
                 GVAR(TfarJammers) set [_sideKeyIter, _jammersList];
             } forEach (keys GVAR(TfarJammers));
