@@ -18,7 +18,9 @@ if (!hasInterface) exitWith {};
 
 params ["_jammers"];
 
-if (isNil "_jammers" || {_jammers isEqualTo (createHashMap)}) exitWith {};
+if (isNil "_jammers") exitWith {
+    _jammers = createHashMap;
+};
 
 // Overwrite
 GVAR(TfarJammersClient) = _jammers;

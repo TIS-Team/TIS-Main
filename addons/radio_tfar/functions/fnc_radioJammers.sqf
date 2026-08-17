@@ -85,6 +85,8 @@ private _sideKey = toUpperANSI (str _side);
 GVAR(TfarJammers) set [_sideKey, _jammers];
 GVAR(ConfigBySide) set [_sideKey, [_radius, _strength, _debug, _side, _sideKey]];
 
+[QGVAR(TfarJammersClientSyncEvent), [GVAR(TfarJammers)]] call CBA_fnc_globalEvent;
+
 private _findStrongestJammerEffect = {
     params ["_player", "_jammersList", "_defaultRadius", "_defaultStrength"];
 
@@ -153,18 +155,6 @@ if (isNil QGVAR(Handle)) then {
 
                 _config params ["_defaultRadius", "_defaultStrength", "_debug", "_configSide", "_configSideKey"];
                 private _jammersList = GVAR(TfarJammers) getOrDefault [_configSideKey, []];
-
-                if (_jammersList isEqualTo []) then {
-                    private _receivingDistanceMultiplicator = _player getVariable ["tf_receivingDistanceMultiplicator", 0];
-                    private _sendingDistanceMultiplicator = _player getVariable ["tf_sendingDistanceMultiplicator", 0];
-                    if (_receivingDistanceMultiplicator != 1) then {
-                        _player setVariable ["tf_receivingDistanceMultiplicator", 1, true];
-                    };
-                    if (_sendingDistanceMultiplicator != 1) then {
-                        _player setVariable ["tf_sendingDistanceMultiplicator", 1, true];
-                    };
-                    continue;
-                };
 
                 private _result = [_player, _jammersList, _defaultRadius, _defaultStrength] call GVAR(FindStrongestJammerEffectFnc);
                 _result params ["_jammer", "_interference", "_sendInterference", "_dist", "_activeRadius"];

@@ -5,7 +5,9 @@
 [QGVAR(initTfarRadioJammerActivateActionEvent), { call FUNC(initJammerActivateAction)}] call CBA_fnc_addEventHandler;
 
 if (hasInterface) then {
-    GVAR(TfarJammersClient) = createHashMap;
+    if (isNil QGVAR(TfarJammersClient)) then {
+        GVAR(TfarJammersClient) = createHashMap;
+    };
 
     // Passed args ["_jammer", "_side", "_unit"];
     [QGVAR(postTfarJammerActivationEvent), { call FUNC(onPostJammerActivationClient)}] call CBA_fnc_addEventHandler;

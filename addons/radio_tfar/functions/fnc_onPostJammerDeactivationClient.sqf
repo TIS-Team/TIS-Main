@@ -19,5 +19,18 @@
 
 if (!hasInterface) exitWith {};
 
-params ["_jammer", "_unit"];
+params ["_jammer", "_side", "_unit"];
 
+private _jammersMap = GVAR(TfarJammersClient);
+private _sides = keys _jammersMap;
+
+{
+	private _side = _x;
+
+	private _sideJammers = _jammersMap get _side;
+	private _index = _sideJammers findIf { _x isEqualTo _jammer };
+	if (_index != -1) then {
+		_sideJammers deleteAt _index;
+	};
+
+} forEach _sides;
