@@ -27,6 +27,7 @@ private _existingJammers = [_side] call FUNC(getJammersForSide);
 if (_existingJammers isEqualTo []) then {
 	// Regular init
 	[[_object], _radius, _strength, false, _side] call FUNC(radioJammers);
+	[QGVAR(postTfarJammerActivationEvent), [_object, _side, _unit]] call CBA_fnc_globalEvent;
 } else {
 	// Add jammer to existing jammers
 	private _jammersMap = GVAR(TfarJammers);
@@ -38,5 +39,6 @@ if (_existingJammers isEqualTo []) then {
 		_existingJammers pushBack _object;
 		private _sideKey = (toUpperANSI (str _side));
 		GVAR(TfarJammers) set [_sideKey, _existingJammers];
+		[QGVAR(postTfarJammerDeactivationEvent), [_object, _side, _unit]] call CBA_fnc_globalEvent;
 	};
 };

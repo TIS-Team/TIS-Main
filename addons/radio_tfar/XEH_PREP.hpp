@@ -4,6 +4,10 @@ PREP(initJammerActivateAction);
 PREP(jammerDoDeactivate);
 PREP(jammerDoActivate);
 PREP(getJammersForSide);
+PREP(jammersSyncClient);
+PREP(isJammerActive);
+PREP(onPostJammerActivationClient);
+PREP(onPostJammerDeactivationClient);
 
 // Eden
 PREP_BY_PATH(edenModuleTfarRadioJammers,functions\eden\fnc_edenModuleTfarRadioJammers.sqf);

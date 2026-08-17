@@ -29,6 +29,7 @@ private _sides = keys _jammersMap;
 	private _index = _sideJammers findIf { _x isEqualTo _object };
 	if (_index != -1) then {
 		_sideJammers deleteAt _index;
+		[QGVAR(postTfarJammerDeactivationEvent), [_object, ([_side] call EFUNC(main,sideFromStringResolver)), _unit]] call CBA_fnc_globalEvent;
 	};
 
 } forEach _sides;

@@ -124,10 +124,17 @@ if (isNil QGVAR(Handle)) then {
 
             // Clean up dead jammers once per tick, per side that currently has an entry.
             {
-                _sideKeyIter = _x;
-                private _jammersList = GVAR(TfarJammers) get _sideKeyIter;
+                _sideKey = _x;
+                private _jammersList = GVAR(TfarJammers) get _sideKey;
+                _deadJammers = _jammersList select { not (alive _x) };
                 _jammersList = _jammersList select { alive _x };
-                GVAR(TfarJammers) set [_sideKeyIter, _jammersList];
+                GVAR(TfarJammers) set [_sideKey, _jammersList];
+                if (_deadJammers isNotEqualTo []) then {
+                    // Publish event that some jammers has been destroyed.
+                    {
+		                [QGVAR(postTfarJammerDeactivationEvent), [_x, ([_sideKey] call EFUNC(main,sideFromStringResolver)), objNull]] call CBA_fnc_globalEvent;
+                    } forEach _deadJammers;
+                };
             } forEach (keys GVAR(TfarJammers));
 
             // Single pass over all players - each player's side determines which
