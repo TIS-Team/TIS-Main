@@ -94,6 +94,7 @@ class RscDisplayMain: RscStandardDisplay
 			idc = -1;
 			text = "Strona TIS";
 			tooltip = "Strona TIS";
+			onbuttonclick = "";
 			url = "https://tispmc.pl/";
 			x="0.5 + (5 + 10 * 2) * (pixelW * pixelGrid * 2)";
 		};
