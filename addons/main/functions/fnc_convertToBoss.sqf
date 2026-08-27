@@ -35,7 +35,7 @@ private _shouldAddCustomDamageHandler = false;
 private _isIMSAi = _unit getVariable ["IMS_ISAI", 0];
 if (_isIMSAi != 1) then {
 	_shouldAddCustomDamageHandler = true;
-	_unit allowDamage false;
+	[_unit, false] remoteExec ["allowDamage", _unit];
 };
 
 _unit setVariable [_healthVariableName, _healthVariable, true];

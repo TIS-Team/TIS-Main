@@ -4,6 +4,8 @@ params ["_unit","_param","_name"];
 
 if (!hasInterface) exitWith {};
 
+if (!(isNil QGVAR(ForceHideBossBar)) && {GVAR(ForceHideBossBar)}) exitWith {};
+
 _healthBarPicture = findDisplay 46 ctrlCreate ["RscPictureKeepAspect", 20004]; 
 _healthBarPicture ctrlSetPosition [0.319531 * safeZoneW + safeZoneX, 0.00500001 * safeZoneH + safeZoneY,0.0360937 * safeZoneW,0.066 * safeZoneH]; 
 _healthBarPicture ctrlSetTextColor [1, 0.05, 0, 0.8]; 
