@@ -15,7 +15,7 @@ if(_shouldMakeMeleeInvincible) then {
 };
 
 if (_customHealthVarName isEqualTo "") then {
-	private _knownCustomHealthVariables = ["WBK_SynthHP", "IMS_CustomHealthDamage", "AI_GardenStateCustomHp"];
+	private _knownCustomHealthVariables = ["WBK_SynthHP", "IMS_CustomHealthDamage", "AI_GardenStateCustomHp", "wbk_ims_customhp"];
 	private _unitVariables = allVariables _unit;
 	{
 		private _variableName = _x;
