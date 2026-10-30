@@ -7,6 +7,6 @@ params ["_object", "_radius", "_strength", "_debug", "_side"];
 if (_mouseOverType != "OBJECT") then {
     [LLSTRING(MustSelectObject)] call FUNC(showZeusFeedbackMessage);
 } else {
-    [_object, _radius, _strength, _debug, _side] remoteExec [QEFUNC(main,tfarRadioJammers), 2];
+    [_object, _radius, _strength, _debug, _side] remoteExec [QEFUNC(radio_tfar,radioJammers), 2];
     [LLSTRING(JammerCreated)] call FUNC(showZeusFeedbackMessage);
 };
